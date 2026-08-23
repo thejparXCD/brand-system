@@ -1,0 +1,6 @@
+Open Design: browse to THIS folder in
+  Advanced → Link local code → Browse folder
+
+Then click Generate.
+
+Do not select the repo root — select this folder (celebration-onpoint).
