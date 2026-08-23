@@ -6,6 +6,14 @@
 
 This is the brand + product design system for **Celebration OnPoint**. It contains the visual foundations (color, type, spacing, effects), the brand logomark, reusable React UI components, and a full marketing-website UI kit ΓÇö everything an agent needs to design on-brand artifacts and production interfaces.
 
+### Open Design (2 minutes)
+
+1. Double-click **`open-design-here.bat`** (or `git pull`)
+2. In Open Design → Advanced → **Link local code** → browse to **`design-systems\celebration-onpoint`**
+3. Generate
+
+Details: **[START-OPEN-DESIGN.md](START-OPEN-DESIGN.md)**
+
 ---
 
 ## Brand context
