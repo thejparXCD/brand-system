@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="OnPoint mark">
+  <defs>
+    <linearGradient id="bolt" x1="18" y1="8" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5C518"/>
+      <stop offset="1" stop-color="#F9A02A"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#1056A5"/>
+  <path fill="url(#bolt)" d="M38 10L20 34h12L26 54l22-28H36z"/>
+</svg>

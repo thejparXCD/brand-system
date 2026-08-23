@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Celebration OnPoint">
+  <defs>
+    <linearGradient id="c" x1="12" y1="8" x2="104" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#59C4E5"/>
+      <stop offset="0.45" stop-color="#1056A5"/>
+      <stop offset="1" stop-color="#081E42"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="78" y1="28" x2="108" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5C518"/>
+      <stop offset="1" stop-color="#F9A02A"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#0A0814"/>
+  <path fill="url(#c)" d="M86 28c-8-6-18-9-28-9-27 0-46 20-46 45s19 45 46 45c10 0 20-3 28-9l-9-12c-6 4-12 6-19 6-17 0-29-13-29-30s12-30 29-30c7 0 13 2 19 6z"/>
+  <path fill="url(#bolt)" d="M94 26l-22 32h16l-10 36 32-40H94z"/>
+</svg>

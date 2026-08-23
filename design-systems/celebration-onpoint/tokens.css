@@ -1,0 +1,138 @@
+/* Celebration OnPoint — Open Design tokens.css
+   Schema contract for agents. Brand-native names in repo tokens/*.css */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ─── Surface (light marketing default) ─────────────────────────── */
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --surface-warm: #eef2f8;
+
+  /* ─── Foreground ──────────────────────────────────────────────── */
+  --fg: #0d1424;
+  --fg-2: #2a3447;
+  --muted: #5a687e;
+  --meta: #7c8aa1;
+
+  /* ─── Border ──────────────────────────────────────────────────── */
+  --border: #c9d3e2;
+  --border-soft: #e2e8f2;
+
+  /* ─── Accent — gold momentum bolt (sparingly) ─────────────────── */
+  --accent: #f5c518;
+  --accent-on: #0a0814;
+  --accent-hover: #f9a02a;
+  --accent-active: #e8920c;
+
+  /* ─── Semantic ────────────────────────────────────────────────── */
+  --success: #1f9d6b;
+  --warn: #e8920c;
+  --danger: #dc4b4b;
+
+  /* ─── Typography ──────────────────────────────────────────────── */
+  --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 21px;
+  --text-2xl: 32px;
+  --text-3xl: 50px;
+  --text-4xl: 67px;
+
+  --leading-body: 1.5;
+  --leading-tight: 1.2;
+  --tracking-display: -0.02em;
+
+  /* ─── Spacing ─────────────────────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  --section-y-desktop: 88px;
+  --section-y-tablet: 56px;
+  --section-y-phone: 40px;
+
+  /* ─── Radius ──────────────────────────────────────────────────── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ─── Elevation (cool navy-tinted) ────────────────────────────── */
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 4px 12px rgba(8, 30, 66, 0.1), 0 2px 4px rgba(8, 30, 66, 0.06);
+
+  /* ─── Focus ───────────────────────────────────────────────────── */
+  --focus-ring: 0 0 0 3px rgba(40, 150, 210, 0.35);
+
+  /* ─── Motion ──────────────────────────────────────────────────── */
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ─── Layout ──────────────────────────────────────────────────── */
+  --container-max: 1200px;
+  --container-gutter-desktop: 24px;
+  --container-gutter-tablet: 20px;
+  --container-gutter-phone: 16px;
+
+  /* ─── Brand extensions (Celebration OnPoint — Layer C) ────────── */
+  --cop-ink: #0a0814;
+  --c-sky: #59c4e5;
+  --c-azure: #2896d2;
+  --c-blue: #1056a5;
+  --c-blue-deep: #0e2a6b;
+  --c-navy: #081e42;
+  --c-gold: #f5c518;
+  --c-gold-warm: #f9a02a;
+  --c-violet: #3a1270;
+  --link: #2896d2;
+  --interactive: #1056a5;
+  --interactive-hover: #0e2a6b;
+
+  /* Light Fields RGB tuples (for rgba(var(--lf-*), α) in lightfields.css) */
+  --lf-blue: 89, 196, 229;
+  --lf-azure: 33, 120, 210;
+  --lf-gold: 245, 180, 40;
+  --lf-gold-hi: 255, 225, 150;
+  --lf-violet: 123, 58, 237;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0814;
+  --surface: #182032;
+  --surface-warm: #081e42;
+  --fg: #ffffff;
+  --fg-2: #e2e8f2;
+  --muted: #a6b3c7;
+  --meta: #7c8aa1;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --elev-raised: 0 8px 28px rgba(40, 150, 210, 0.22);
+  --focus-ring: 0 0 0 3px rgba(245, 197, 24, 0.4);
+}
