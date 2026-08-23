@@ -1,0 +1,8 @@
+{
+  "name": "celebration-onpoint-brand-system",
+  "private": true,
+  "description": "Celebration OnPoint brand system with an Open Design compatible package.",
+  "scripts": {
+    "generate:open-design": "node scripts/generate-open-design-indexes.mjs"
+  }
+}

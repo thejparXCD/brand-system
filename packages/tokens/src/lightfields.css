@@ -1,0 +1,87 @@
+/* Celebration OnPoint — Light Fields
+   Cool light from the left, warm gold from the right, over near-black,
+   pooling on the floor. Never sit a dark surface as flat black. */
+
+:root {
+  --lf-blue: 89, 196, 229;
+  --lf-azure: 33, 120, 210;
+  --lf-gold: 245, 180, 40;
+  --lf-gold-hi: 255, 225, 150;
+  --lf-violet: 123, 58, 237;
+}
+
+.cop-lightfield {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--c-ink);
+}
+
+.cop-lightfield::before,
+.cop-lightfield::after {
+  content: '';
+  position: absolute;
+  inset: -10%;
+}
+
+.cop-lf--pillars::before {
+  background:
+    radial-gradient(28% 80% at 18% 110%, rgba(var(--lf-blue), 0.42), transparent 70%),
+    radial-gradient(18% 70% at 32% 120%, rgba(var(--lf-azure), 0.28), transparent 68%);
+}
+
+.cop-lf--pillars::after {
+  background:
+    radial-gradient(26% 78% at 82% 112%, rgba(var(--lf-gold), 0.38), transparent 70%),
+    radial-gradient(16% 60% at 70% 118%, rgba(var(--lf-gold-hi), 0.18), transparent 66%);
+}
+
+.cop-lf--horizon::before {
+  background: radial-gradient(70% 45% at 18% 108%, rgba(var(--lf-blue), 0.46), transparent 72%);
+}
+
+.cop-lf--horizon::after {
+  background: radial-gradient(70% 45% at 84% 108%, rgba(var(--lf-gold), 0.40), transparent 72%);
+}
+
+.cop-lf--aurora::before {
+  background: radial-gradient(80% 60% at 20% 0%, rgba(var(--lf-azure), 0.28), transparent 70%);
+}
+
+.cop-lf--aurora::after {
+  background: radial-gradient(70% 55% at 88% 20%, rgba(var(--lf-gold), 0.20), transparent 72%);
+}
+
+.cop-lf--purple::before {
+  background: radial-gradient(60% 70% at 16% 20%, rgba(var(--lf-violet), 0.42), transparent 70%);
+}
+
+.cop-lf--purple::after {
+  background: radial-gradient(55% 65% at 86% 80%, rgba(var(--lf-gold), 0.32), transparent 70%);
+}
+
+.cop-lf--spotlight::before {
+  background: radial-gradient(40% 50% at 50% -10%, rgba(var(--lf-blue), 0.30), transparent 70%);
+}
+
+.cop-lf--spotlight::after {
+  background: radial-gradient(50% 40% at 50% 110%, rgba(var(--lf-gold), 0.18), transparent 72%);
+}
+
+.cop-lf--alive::before,
+.cop-lf--alive::after {
+  animation: cop-lf-breathe 12s var(--ease-in-out) infinite alternate;
+}
+
+@keyframes cop-lf-breathe {
+  from { transform: scale(1) translateY(0); opacity: 1; }
+  to { transform: scale(1.06) translateY(-2%); opacity: 0.86; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cop-lf--alive::before,
+  .cop-lf--alive::after {
+    animation: none;
+  }
+}

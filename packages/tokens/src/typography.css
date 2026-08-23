@@ -1,0 +1,36 @@
+/* Celebration OnPoint — typography tokens
+   1.250 major third on a 16px base. */
+
+:root {
+  --font-display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-display: 4.209rem;
+  --fs-h1: 3.157rem;
+  --fs-h2: 2.369rem;
+  --fs-h3: 1.777rem;
+  --fs-h4: 1.333rem;
+  --fs-lg: 1.125rem;
+  --fs-base: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.08em;
+  --ls-caps: 0.14em;
+
+  --text-display-font: var(--font-display);
+  --text-eyebrow-font: var(--font-mono);
+}

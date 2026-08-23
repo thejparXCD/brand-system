@@ -1,0 +1,89 @@
+/* Celebration OnPoint — color tokens
+   Blue is the foundation. Gold is the accent — used sparingly. */
+
+:root {
+  /* Brand blues — the C */
+  --c-sky: #59C4E5;
+  --c-azure: #2896D2;
+  --c-blue: #1056A5;
+  --c-blue-deep: #0E2A6B;
+  --c-navy: #081E42;
+  --c-ink: #0A0814;
+
+  /* Gold momentum bolt */
+  --c-gold: #F5C518;
+  --c-gold-warm: #F9A02A;
+  --c-gold-deep: #E8920C;
+
+  /* Service-line + Sky Solutions */
+  --c-violet: #3A1270;
+  --c-charcoal: #141028;
+
+  /* Cool navy-tinted neutrals — never pure gray */
+  --n-0: #FFFFFF;
+  --n-25: #F7F9FC;
+  --n-50: #EEF2F8;
+  --n-100: #E2E8F2;
+  --n-200: #C9D3E2;
+  --n-300: #A6B3C7;
+  --n-400: #7C8AA1;
+  --n-500: #5A687E;
+  --n-600: #404C61;
+  --n-700: #2A3447;
+  --n-800: #182032;
+  --n-900: #0D1424;
+  --n-950: #070C18;
+
+  /* Semantic */
+  --c-success: #1F9D6B;
+  --c-warning: #E8920C;
+  --c-danger: #DC4B4B;
+  --c-info: #2896D2;
+
+  /* Surfaces */
+  --surface-page: var(--n-25);
+  --surface-card: var(--n-0);
+  --surface-sunken: var(--n-50);
+  --surface-inverse: var(--c-navy);
+  --surface-brand: var(--c-blue);
+
+  /* Text */
+  --text-strong: var(--n-900);
+  --text-body: var(--n-700);
+  --text-muted: var(--n-500);
+  --text-faint: var(--n-400);
+  --text-on-dark: var(--n-0);
+  --text-on-brand: var(--n-0);
+  --text-accent: var(--c-blue);
+  --text-link: var(--c-azure);
+
+  /* Borders */
+  --border-subtle: var(--n-100);
+  --border-default: var(--n-200);
+  --border-strong: var(--n-300);
+  --border-focus: var(--c-azure);
+
+  /* Interactive */
+  --accent: var(--c-gold);
+  --accent-ink: var(--c-ink);
+  --interactive: var(--c-blue);
+  --interactive-hover: var(--c-blue-deep);
+
+  /* Brand gradients */
+  --grad-c: linear-gradient(150deg, var(--c-sky) 0%, var(--c-blue) 45%, var(--c-navy) 100%);
+  --grad-bolt: linear-gradient(120deg, var(--c-gold) 0%, var(--c-gold-warm) 100%);
+  --grad-momentum: linear-gradient(115deg, var(--c-blue-deep) 0%, var(--c-azure) 100%);
+
+  /* Service-line radials — lighter core, dark edges, shared gold accent */
+  --grad-technology: radial-gradient(80% 65% at 16% -6%, rgba(123, 58, 237, 0.62), transparent 64%),
+    radial-gradient(50% 30% at 100% 106%, rgba(245, 180, 40, 0.16), transparent 72%),
+    linear-gradient(165deg, #160A32 0%, #0A0814 70%);
+  --grad-growth: radial-gradient(82% 66% at 88% -6%, rgba(245, 160, 30, 0.60), transparent 64%),
+    radial-gradient(48% 30% at 0% 106%, rgba(33, 120, 210, 0.28), transparent 72%),
+    linear-gradient(165deg, #1A1430 0%, #0A0E22 72%);
+  --grad-mission: radial-gradient(82% 66% at 16% -6%, rgba(40, 150, 210, 0.60), transparent 64%),
+    radial-gradient(46% 30% at 104% 106%, rgba(245, 180, 40, 0.15), transparent 72%),
+    linear-gradient(165deg, #0C2A52 0%, #081E42 74%);
+  --grad-data: radial-gradient(78% 60% at 50% -10%, rgba(90, 112, 165, 0.34), transparent 70%),
+    linear-gradient(170deg, #191730 0%, #08080C 74%);
+}

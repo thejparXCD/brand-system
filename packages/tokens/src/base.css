@@ -1,0 +1,70 @@
+/* Celebration OnPoint — resets and brand-tier helpers */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text-link);
+}
+
+a:hover {
+  color: var(--c-blue);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+.cop-tier-momentum {
+  --cop-tier-ground: var(--c-ink);
+  --cop-tier-accent: var(--c-gold);
+}
+
+.cop-tier-authority {
+  --cop-tier-ground: var(--c-navy);
+  --cop-tier-accent: var(--c-azure);
+}
+
+.cop-grid-overlay {
+  position: relative;
+}
+
+.cop-grid-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

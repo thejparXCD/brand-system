@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "brandId": "celebration-onpoint",
+  "sourceScope": "github-hybrid-import",
+  "generatedAt": "2026-08-23T00:00:00.000Z",
+  "files": [
+    { "path": "DESIGN.md", "role": "canonical-prose" },
+    { "path": "readme.md", "role": "brand-narrative" },
+    { "path": "SKILL.md", "role": "agent-skill" },
+    { "path": "styles.css", "role": "token-entry" },
+    { "path": "_ds_manifest.json", "role": "compiled-token-index" },
+    { "path": "_ds_bundle.js", "role": "compiled-components" },
+    { "path": "_adherence.oxlintrc.json", "role": "adherence-lint" },
+    { "path": "thumbnail.html", "role": "project-tile" },
+    { "path": "portal-export.html", "role": "portal-artifact" },
+    { "path": "hyperframes-process.html", "role": "process-artifact" }
+  ]
+}

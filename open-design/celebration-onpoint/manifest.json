@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "od-design-system-project/v1",
+  "id": "celebration-onpoint",
+  "name": "Celebration OnPoint",
+  "category": "Professional Services",
+  "description": "Blue-foundation, gold-accent brand system for Celebration OnPoint — M³ philosophy, AIM OnPoint™, Light Fields atmosphere.",
+  "source": {
+    "type": "github",
+    "url": "https://github.com/thejparXCD/brand-system",
+    "branch": "main"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css",
+    "components": "components.html"
+  },
+  "usage": "USAGE.md",
+  "componentsManifest": "components.manifest.json",
+  "importMode": "hybrid",
+  "assetsDir": "assets",
+  "previewDir": "preview",
+  "craft": {
+    "applies": [],
+    "suggested": [
+      "color",
+      "accessibility-baseline"
+    ],
+    "exemptions": []
+  },
+  "fonts": [
+    {
+      "family": "Poppins",
+      "file": "fonts/Poppins-Regular.woff2",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "family": "Poppins",
+      "file": "fonts/Poppins-Semibold.woff2",
+      "weight": 600,
+      "style": "normal"
+    }
+  ],
+  "preview": {
+    "dir": "preview",
+    "pages": [
+      {
+        "path": "preview/index.html",
+        "role": "overview",
+        "title": "Celebration OnPoint"
+      },
+      {
+        "path": "preview/colors.html",
+        "role": "colors",
+        "title": "Colors"
+      },
+      {
+        "path": "preview/typography.html",
+        "role": "typography",
+        "title": "Typography"
+      },
+      {
+        "path": "preview/spacing.html",
+        "role": "spacing",
+        "title": "Spacing"
+      }
+    ]
+  },
+  "sourceFiles": {
+    "scanned": "source/scanned-files.json",
+    "evidence": "source/evidence.md",
+    "tokens": "source/tokens.source.json"
+  }
+}

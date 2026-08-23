@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celebration OnPoint — preview</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+    header { position: relative; overflow: hidden; background: #0a0814; color: #fff; padding: 72px var(--container-gutter-desktop); }
+    header h1 { font-family: var(--font-display); font-size: var(--text-3xl); letter-spacing: var(--tracking-display); line-height: var(--leading-tight); margin: 12px 0; }
+    header p { color: rgba(255,255,255,0.72); max-width: 40rem; }
+    .eyebrow { font-family: var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; font-size: var(--text-xs); color: var(--accent); }
+    main { max-width: var(--container-max); margin: 0 auto; padding: var(--space-12) var(--container-gutter-desktop); display: grid; gap: var(--space-8); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-5); }
+    a.card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5); text-decoration: none; color: inherit; box-shadow: var(--elev-raised); }
+    a.card:hover { transform: translateY(-3px); }
+    a.card h2 { font-family: var(--font-display); font-size: var(--text-xl); margin: 0 0 var(--space-2); }
+    a.card p { margin: 0; color: var(--muted); }
+    .logo { width: 72px; height: 72px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="../assets/logo.svg" alt="Celebration OnPoint">
+    <p class="eyebrow">Open Design package</p>
+    <h1>Celebration OnPoint</h1>
+    <p>We build momentum. Real. Measurable. Unstoppable. Blue is the foundation. Gold is the accent.</p>
+  </header>
+  <main>
+    <div class="grid">
+      <a class="card" href="colors.html"><h2>Colors</h2><p>Foundation blues, gold accent, cool neutrals, semantic states.</p></a>
+      <a class="card" href="typography.html"><h2>Typography</h2><p>Poppins, Open Sans, IBM Plex Mono on a major-third scale.</p></a>
+      <a class="card" href="spacing.html"><h2>Spacing</h2><p>4px base, squircle radii, 88px marketing sections.</p></a>
+      <a class="card" href="../components.html"><h2>Components</h2><p>Standalone fixture used by Open Design agents.</p></a>
+      <a class="card" href="../DESIGN.md"><h2>DESIGN.md</h2><p>Canonical prose contract for agents.</p></a>
+      <a class="card" href="../../../docs/brand-guidelines.md"><h2>Brand guidelines</h2><p>Voice, M³, AIM, and the Sky Solutions boundary.</p></a>
+    </div>
+  </main>
+</body>
+</html>

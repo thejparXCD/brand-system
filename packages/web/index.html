@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celebration OnPoint</title>
+  <link rel="stylesheet" href="../tokens/styles.css">
+  <style>
+    body { margin: 0; background: var(--c-ink); color: var(--n-0); }
+    .hero { position: relative; min-height: 100vh; overflow: hidden; display: flex; align-items: center; }
+    .inner { position: relative; width: min(var(--container-max), calc(100% - 48px)); margin: 0 auto; display: grid; gap: var(--space-8); }
+    .eyebrow { font-family: var(--font-mono); letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--c-gold); font-size: 12px; }
+    h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: var(--ls-tight); font-size: clamp(40px, 7vw, 72px); line-height: 1.05; margin: 0; max-width: 14ch; }
+    p { font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.72); max-width: 44ch; margin: 0; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: var(--radius-md); font-family: var(--font-body); font-weight: 600; text-decoration: none; }
+    .btn-gold { background: var(--c-gold); color: var(--c-ink); }
+    .btn-ghost { background: transparent; color: var(--n-0); border: 1.5px solid rgba(255,255,255,0.22); }
+    a:hover.btn-gold { background: var(--c-gold-warm); }
+    a:hover.btn-ghost { border-color: var(--c-gold); }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="cop-lightfield cop-lf--pillars cop-lf--alive" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="eyebrow">Celebration OnPoint</div>
+      <h1>We build momentum.</h1>
+      <p>Real. Measurable. Unstoppable. Unify Message, Machines, and Mission so organizations can see more, sell more, and operate smarter.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="../../open-design/celebration-onpoint/preview/index.html">Open design preview</a>
+        <a class="btn btn-ghost" href="portal-export.html">Customer portal</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

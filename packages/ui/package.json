@@ -1,0 +1,15 @@
+{
+  "name": "@celebration-onpoint/ui",
+  "version": "1.0.0",
+  "description": "Celebration OnPoint React UI primitives.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./dist/bundle": "./dist/_ds_bundle.js"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  }
+}

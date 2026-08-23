@@ -1,0 +1,17 @@
+{
+  "name": "@celebration-onpoint/tokens",
+  "version": "1.0.0",
+  "description": "Celebration OnPoint design tokens — colors, type, spacing, effects, and Light Fields.",
+  "license": "UNLICENSED",
+  "files": [
+    "src",
+    "fonts",
+    "styles.css"
+  ],
+  "exports": {
+    ".": "./styles.css",
+    "./styles.css": "./styles.css",
+    "./src/*": "./src/*",
+    "./fonts/*": "./fonts/*"
+  }
+}
