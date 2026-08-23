@@ -2,6 +2,8 @@
 
 **Start here:** [START-OPEN-DESIGN.md](START-OPEN-DESIGN.md)
 
-**Windows:** double-click `open-design-here.bat` — it pulls the repo and opens the folder to pick in Open Design.
+Important: **Do not** use “Design a system, in minutes” + Link local code — that re-extracts and invents fake UI. Use **Settings → Design Systems → Import** instead.
+
+**Windows:** double-click `open-design-here.bat`
 
 Package folder: `design-systems/celebration-onpoint/`
