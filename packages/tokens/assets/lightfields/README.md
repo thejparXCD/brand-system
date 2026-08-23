@@ -2,15 +2,17 @@
 
 Photographic plates for `--lf-plate-*` tokens and `.cop-lf-plate--*` classes.
 
-Restore these original PNGs here. Do not invent replacements.
+Drop the original PNGs here using these filenames. Do not invent replacements.
 
-- `pillars-bluegold.png`
-- `pillars-goldup.png`
-- `rays-blue.png`
-- `rays-bluegold.png`
-- `horizon-bluegold.png`
-- `whispy-bluegold.png`
-- `smoky-bluegold.png`
-- `burst-gold.png`
-- `rays-purplegold.png`
-- `glow-purplegold.png`
+| File | Plate |
+| --- | --- |
+| `pillars-bluegold.png` | Vertical blue-left / gold-right pillars, floor pool |
+| `pillars-goldup.png` | Broader gold pillars, single blue beam |
+| `rays-blue.png` | Blue volumetric rays from the left |
+| `rays-bluegold.png` | Curved blue + gold motion trails |
+| `horizon-bluegold.png` | Dual corner god-rays meeting toward center |
+| `whispy-bluegold.png` | Soft hazy blue beams, faint gold |
+| `smoky-bluegold.png` | Cloudy / smoky blue-left, textured gold-right |
+| `burst-gold.png` | Sharp gold burst and flare, blue streaks opposite |
+| `rays-purplegold.png` | Purple-left / gold-right textured rays |
+| `glow-purplegold.png` | Soft purple / gold wash, no hard edges |

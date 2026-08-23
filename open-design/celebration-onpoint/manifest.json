@@ -63,6 +63,11 @@
         "path": "preview/spacing.html",
         "role": "spacing",
         "title": "Spacing"
+      },
+      {
+        "path": "preview/lightfields.html",
+        "role": "atmosphere",
+        "title": "Light Fields"
       }
     ]
   },
