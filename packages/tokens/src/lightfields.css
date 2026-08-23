@@ -8,6 +8,17 @@
   --lf-gold: 245, 180, 40;
   --lf-gold-hi: 255, 225, 150;
   --lf-violet: 123, 58, 237;
+
+  --lf-plate-pillars-bluegold: url("../assets/lightfields/pillars-bluegold.png");
+  --lf-plate-pillars-goldup: url("../assets/lightfields/pillars-goldup.png");
+  --lf-plate-rays-blue: url("../assets/lightfields/rays-blue.png");
+  --lf-plate-rays-bluegold: url("../assets/lightfields/rays-bluegold.png");
+  --lf-plate-horizon: url("../assets/lightfields/horizon-bluegold.png");
+  --lf-plate-whispy: url("../assets/lightfields/whispy-bluegold.png");
+  --lf-plate-smoky: url("../assets/lightfields/smoky-bluegold.png");
+  --lf-plate-burst-gold: url("../assets/lightfields/burst-gold.png");
+  --lf-plate-rays-purplegold: url("../assets/lightfields/rays-purplegold.png");
+  --lf-plate-glow-purplegold: url("../assets/lightfields/glow-purplegold.png");
 }
 
 .cop-lightfield {
@@ -78,6 +89,28 @@
   from { transform: scale(1) translateY(0); opacity: 1; }
   to { transform: scale(1.06) translateY(-2%); opacity: 0.86; }
 }
+
+.cop-lf-plate {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--c-ink);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: linear-gradient(to top, black 55%, transparent 100%);
+}
+
+.cop-lf-plate--pillars-bluegold { background-image: var(--lf-plate-pillars-bluegold); }
+.cop-lf-plate--pillars-goldup { background-image: var(--lf-plate-pillars-goldup); }
+.cop-lf-plate--rays-blue { background-image: var(--lf-plate-rays-blue); }
+.cop-lf-plate--rays-bluegold { background-image: var(--lf-plate-rays-bluegold); }
+.cop-lf-plate--horizon { background-image: var(--lf-plate-horizon); }
+.cop-lf-plate--whispy { background-image: var(--lf-plate-whispy); }
+.cop-lf-plate--smoky { background-image: var(--lf-plate-smoky); }
+.cop-lf-plate--burst-gold { background-image: var(--lf-plate-burst-gold); }
+.cop-lf-plate--rays-purplegold { background-image: var(--lf-plate-rays-purplegold); }
+.cop-lf-plate--glow-purplegold { background-image: var(--lf-plate-glow-purplegold); }
 
 @media (prefers-reduced-motion: reduce) {
   .cop-lf--alive::before,

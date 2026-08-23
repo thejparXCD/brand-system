@@ -13,7 +13,8 @@ brand-system/
 ├── docs/
 │   ├── brand-guidelines.md
 │   ├── component-rules.md
-│   └── accessibility-rules.md
+│   ├── accessibility-rules.md
+│   └── design-system.md     full brand contract (layout, tokens, templates, rules)
 ├── open-design/
 │   └── celebration-onpoint/   Open Design v1 package
 └── README.md
@@ -48,4 +49,4 @@ Agents should paste the `:root` block from `tokens.css` into the first artifact 
 
 Blue is the foundation. Gold `#F5C518` is the sparing accent. Dark surfaces use **Light Fields** (cool left, warm right, never flat black). Voice writes in threes. **Visual Data Intelligence is not this brand** — it belongs to OnPoint Sky Solutions.
 
-Start with `docs/brand-guidelines.md` or `SKILL.md` when designing artifacts.
+Start with `docs/design-system.md` for the full contract, `docs/brand-guidelines.md` for voice, or `SKILL.md` when designing artifacts.

@@ -10,6 +10,7 @@ If creating visual artifacts (slides, mocks, throwaway prototypes, etc), copy as
 
 Key files:
 - `README.md` — repository map and Open Design entry.
+- `docs/design-system.md` — full brand-system contract (tokens, components, Light Fields, templates, working rules).
 - `docs/brand-guidelines.md` — brand context, voice, visual foundations.
 - `docs/component-rules.md` — React component contract.
 - `docs/accessibility-rules.md` — contrast, focus, reduced motion.

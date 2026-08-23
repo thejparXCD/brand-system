@@ -34,3 +34,13 @@ Compiler discovery still registers PascalCase pairs of `.jsx` + `.d.ts`. Capital
 Colors come from `packages/tokens`. If a token does not exist, derive it in `oklch` from the existing palette and add it there. Do not invent a one-off hex inline.
 
 Open Design fixtures must use the shared schema names in `open-design/celebration-onpoint/tokens.css` (`--bg`, `--fg`, `--accent`, …).
+
+## Working rules
+
+1. Never hand-edit generated files (`packages/ui/dist/*`). Change the source, recompile.
+2. Never flatten a React component into production HTML. The Open Design `components.html` fixture is the only approved HTML stand-in.
+3. Never regenerate or “simplify” Light Field plates, logomarks, or uploaded source imagery.
+4. Define `a` and `a:hover` colors in any standalone artifact.
+5. Two background colors per deck, maximum.
+6. Templates own their own folder. Nothing template-related belongs at the repository root.
+7. No Light Fields inside app working surfaces — gold for action, AIM phase colors for data.

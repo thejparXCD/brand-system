@@ -14,6 +14,22 @@ Celebration OnPoint builds **asymmetric advantage** by turning hidden reality in
 
 **AIM OnPoint™** is the operational blueprint: Acquire · Integrate · Maximize, powered by the **6 C’s** (Client Commitment, Connection, Clarity, Creativity, Confidence, Celebration).
 
+### Service taxonomy
+
+All public service lines are expressions of M³:
+
+- **3.1 Growth & Workforce Enablement** *(Message)* — sales training, marketing & communications.
+- **3.2 Technology & Infrastructure** *(Machines)* — AI transformation & automation, IT & cybersecurity advisory, Microsoft licensing & governance.
+- **3.3 Mission Strategy & Readiness** *(Mission)* — adoption & change management, AI governance for health systems.
+
+| Service line | Hue | Core → edge | Accent |
+| --- | --- | --- | --- |
+| Technology & Infrastructure | violet | `#3A1270` → `#0A0814` | gold `#F5C518` |
+| Growth & Workforce | blue → orange | `#E8920C` → `#0A1A3E` | gold `#F5C518` |
+| Mission Strategy & Readiness | ocean | `#2896D2` → `#081E42` | gold `#F5C518` |
+
+AIM phase colors: Acquire `#1056A5` · Integrate `#2896D2` · Maximize `#F5C518` (use `#B08A05` for Maximize text on light grounds).
+
 ## Voice
 
 - Write in threes. Cadence and parallelism are the signature.
@@ -34,8 +50,16 @@ Two tiers:
 
 **Light Fields** is the signature atmosphere: cool light from the left, warm gold from the right, over near-black, pooling on the floor. Dark surfaces glow; they never sit flat black.
 
+## Iconography and illustration
+
+- **Lucide** — 2px stroke, 24×24 grid, rounded caps and joins. No emoji. No unicode pictographs as icons.
+- The only recurring non-icon motif is the **gold momentum rule** — a 3px gradient bar standing in for the logomark's bolt.
+- **Technical line art** only: flat, front-on, real objects. Never isometric, never 3D, never abstract blobs or characters.
+- 24×24 artboard, 1.75px uniform stroke, 2px corner radius. Exactly one gold element per illustration.
+- Line palette: `#081E42` primary · `#1056A5` structure · `#2896D2` secondary · `#C9D3E2` recede.
+
 ## Brand boundary
 
 Visual Data Intelligence (4D capture, drones, Matterport) is **not** a Celebration OnPoint service line. It belongs to **OnPoint Sky Solutions** and may appear only as a footer family-of-brands link.
 
-Canonical agent contract: `open-design/celebration-onpoint/DESIGN.md`.
+Full repository contract: `docs/design-system.md`. Open Design agents: `open-design/celebration-onpoint/USAGE.md`.

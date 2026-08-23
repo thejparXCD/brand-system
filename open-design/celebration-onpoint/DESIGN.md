@@ -1,6 +1,6 @@
 # DESIGN.md — Celebration OnPoint
 
-**Canonical design reference for Open Design agents.** This file is the prose contract. `tokens.css` is the compiled binding. `readme` at the repository root and `docs/brand-guidelines.md` carry narrative; this file carries decisions.
+**Canonical design reference for Open Design agents.** This file is the prose contract. `tokens.css` is the compiled binding. The full brand-system contract is `docs/design-system.md`; `docs/brand-guidelines.md` carries narrative.
 
 - **Owner:** Celebration Holdings, dba Celebration OnPoint / OnPoint Sky Solutions
 - **Package id:** `celebration-onpoint`
