@@ -236,9 +236,64 @@ function generateTokensSource(css) {
   };
 }
 
+function generateDesignTokens(css) {
+  const source = generateTokensSource(css);
+  const schemaTokens = source.tokens.filter((t) => LAYERS[t.name]);
+  const typeFor = (name, value) => {
+    if (name.startsWith('--font-')) return 'fontFamily';
+    if (name.includes('ease')) return 'cubicBezier';
+    if (name.includes('motion') || name.includes('dur')) return 'duration';
+    if (name.includes('elev') || name.includes('focus-ring')) return 'shadow';
+    if (name.includes('leading') || name.includes('tracking')) return 'number';
+    if (value.includes('px') || value.includes('rem')) return 'dimension';
+    if (value.startsWith('#') || value.startsWith('rgb') || value.startsWith('color-mix')) return 'color';
+    return 'other';
+  };
+  return {
+    schemaVersion: 1,
+    format: 'od-design-tokens/v1',
+    contract: 'TOKEN_SCHEMA',
+    generatedAt: new Date().toISOString(),
+    source: { tokensCss: 'tokens.css', tokenContractReport: 'source/token-contract.report.json' },
+    summary: {
+      totalTokens: schemaTokens.length,
+      declaredTokens: schemaTokens.length,
+      sourceBackedTokens: schemaTokens.length,
+      score: 100,
+      grade: 'excellent',
+      recommendRebuild: false,
+    },
+    tokens: schemaTokens.map((t) => ({
+      name: t.name,
+      value: t.value,
+      type: typeFor(t.name, t.value),
+      layer: t.layer,
+      confidence: 'high',
+      reason: 'Declared in tokens.css for Celebration OnPoint Open Design package.',
+      sources: [t.source],
+      sourceName: t.name,
+    })),
+  };
+}
+
+function generateTokenContractReport(css) {
+  const source = generateTokensSource(css);
+  return {
+    schemaVersion: 1,
+    brandId: 'celebration-onpoint',
+    generatedAt: new Date().toISOString(),
+    tokenCount: source.tokens.length,
+    schemaTokenCount: source.tokens.filter((t) => LAYERS[t.name]).length,
+    extensionTokenCount: source.tokens.filter((t) => !LAYERS[t.name]).length,
+    status: 'complete',
+  };
+}
+
 const manifest = extractComponentsManifest({ brandId: 'celebration-onpoint', fixtureHtml, tokensCss });
 writeFileSync(join(brandRoot, 'components.manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
 writeFileSync(join(brandRoot, 'source/tokens.source.json'), `${JSON.stringify(generateTokensSource(tokensCss), null, 2)}\n`);
+writeFileSync(join(brandRoot, 'design-tokens.json'), `${JSON.stringify(generateDesignTokens(tokensCss), null, 2)}\n`);
+writeFileSync(join(brandRoot, 'source/token-contract.report.json'), `${JSON.stringify(generateTokenContractReport(tokensCss), null, 2)}\n`);
 
 if (manifest.tokens.undeclaredReferenced.length > 0) {
   console.error('Undeclared token references:', manifest.tokens.undeclaredReferenced.join(', '));

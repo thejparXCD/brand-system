@@ -1,6 +1,11 @@
-Open Design: browse to THIS folder in
-  Advanced → Link local code → Browse folder
+STOP — wrong Open Design screen?
 
-Then click Generate.
+"Design a system, in minutes" + Link local code = AI invents a fake system.
 
-Do not select the repo root — select this folder (celebration-onpoint).
+RIGHT WAY:
+  Open Design → Settings → Design Systems → Import → Local folder
+  → select THIS folder (celebration-onpoint)
+
+Then create designs FROM "Celebration OnPoint" — do not re-run the create wizard.
+
+See START-OPEN-DESIGN.md in the repo root.

@@ -11,7 +11,7 @@
     "styleBlockCount": 1,
     "selectorCount": 50,
     "classCount": 26,
-    "elementCount": 26
+    "elementCount": 27
   },
   "tokens": {
     "declared": [
@@ -266,6 +266,7 @@
     "kbd",
     "label",
     "line",
+    "link",
     "main",
     "meta",
     "p",
