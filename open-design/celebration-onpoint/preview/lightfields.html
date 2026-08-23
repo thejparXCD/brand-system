@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celebration OnPoint Light Fields</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../lightfields.css">
+  <style>
+    body { margin: 0; background: var(--cop-ink); color: var(--fg); font-family: var(--font-body); }
+    main { max-width: var(--container-max); margin: 0 auto; padding: var(--space-12) var(--space-6); }
+    h1 { font-family: var(--font-display); letter-spacing: var(--tracking-display); }
+    p { color: rgba(255, 255, 255, 0.72); max-width: 42rem; line-height: var(--leading-body); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); }
+    .tile { position: relative; overflow: hidden; min-height: 220px; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .label { position: relative; padding: var(--space-4); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-gold); }
+    code { font-family: var(--font-mono); font-size: var(--text-xs); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Light Fields</h1>
+    <p>Cool light from the left, warm gold from the right, over ink, pooling on the floor. CSS treatments from <code>lightfields.css</code>. Photographic plates live in repo <code>assets/lightfields/</code>.</p>
+    <div class="grid">
+      <div class="tile"><div class="cop-lightfield cop-lf--pillars" aria-hidden="true"></div><div class="label">pillars</div></div>
+      <div class="tile"><div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div><div class="label">horizon</div></div>
+      <div class="tile"><div class="cop-lightfield cop-lf--aurora" aria-hidden="true"></div><div class="label">aurora</div></div>
+      <div class="tile"><div class="cop-lightfield cop-lf--purple" aria-hidden="true"></div><div class="label">purple</div></div>
+      <div class="tile"><div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div><div class="label">spotlight</div></div>
+    </div>
+  </main>
+</body>
+</html>

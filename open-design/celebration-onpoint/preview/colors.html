@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celebration OnPoint colors</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+    main { max-width: var(--container-max); margin: 0 auto; padding: var(--space-12) var(--space-6); }
+    h1 { margin: 0 0 var(--space-6); font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4); }
+    .swatch { border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); overflow: hidden; box-shadow: var(--elev-ring); }
+    .color { height: 88px; }
+    .meta { padding: var(--space-3); color: var(--muted); font-size: var(--text-sm); }
+    strong { display: block; margin-bottom: var(--space-1); color: var(--fg); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Color roles</h1>
+    <div class="grid">
+      <div class="swatch"><div class="color" style="background:var(--bg)"></div><div class="meta"><strong>Background</strong>--bg</div></div>
+      <div class="swatch"><div class="color" style="background:var(--surface)"></div><div class="meta"><strong>Surface</strong>--surface</div></div>
+      <div class="swatch"><div class="color" style="background:var(--fg)"></div><div class="meta"><strong>Foreground</strong>--fg</div></div>
+      <div class="swatch"><div class="color" style="background:var(--muted)"></div><div class="meta"><strong>Muted</strong>--muted</div></div>
+      <div class="swatch"><div class="color" style="background:var(--border)"></div><div class="meta"><strong>Border</strong>--border</div></div>
+      <div class="swatch"><div class="color" style="background:var(--accent)"></div><div class="meta"><strong>Accent</strong>--accent</div></div>
+      <div class="swatch"><div class="color" style="background:var(--success)"></div><div class="meta"><strong>Success</strong>--success</div></div>
+      <div class="swatch"><div class="color" style="background:var(--warn)"></div><div class="meta"><strong>Warning</strong>--warn</div></div>
+      <div class="swatch"><div class="color" style="background:var(--danger)"></div><div class="meta"><strong>Danger</strong>--danger</div></div>
+    </div>
+  </main>
+</body>
+</html>
