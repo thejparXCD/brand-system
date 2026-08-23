@@ -1,0 +1,81 @@
+<!-- @dsCard group="Brand" viewport="700x330" name="Illustration Standard" subtitle="Technical line art — 24px grid, 1.75px stroke, one gold highlight" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); }
+  h5 { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 10px; }
+  .grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; }
+  .specs { display: grid; gap: 9px; }
+  .spec { display: grid; grid-template-columns: 82px 1fr; gap: 12px; align-items: baseline; }
+  .spec dt { font-family: var(--font-mono); font-size: 10.5px; color: var(--c-blue); }
+  .spec dd { margin: 0; font-size: 12px; line-height: 1.4; color: var(--text-muted); }
+  .spec dd b { color: var(--text-strong); font-weight: 600; }
+  .ramp { display: flex; gap: 6px; margin-top: 2px; }
+  .sw { flex: 1; }
+  .sw i { display: block; height: 22px; border-radius: var(--radius-sm); }
+  .sw span { display: block; font-family: var(--font-mono); font-size: 8.5px; color: var(--text-faint); margin-top: 4px; }
+  .demo { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-sm); }
+  .sizes { display: flex; align-items: flex-end; gap: 18px; color: #081E42; }
+  .sizes figcaption { font-family: var(--font-mono); font-size: 8.5px; color: var(--text-faint); text-align: center; margin-top: 6px; }
+  .sizes figure { margin: 0; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; margin-top: 16px; }
+  .rules p { margin: 0; font-size: 11.5px; line-height: 1.45; color: var(--text-muted); padding-left: 15px; position: relative; }
+  .rules p::before { position: absolute; left: 0; top: 0; font-weight: 700; }
+  .yes::before { content: "+"; color: var(--c-blue); }
+  .no::before { content: "\00d7"; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div>
+      <h5>Construction</h5>
+      <dl class="specs">
+        <div class="spec"><dt>grid</dt><dd><b>24 &times; 24</b> base artboard, scaled in whole multiples &mdash; 24 / 48 / 64 / 160</dd></div>
+        <div class="spec"><dt>stroke</dt><dd><b>1.75px</b> at 24px, round cap and join, no variable weight</dd></div>
+        <div class="spec"><dt>fill</dt><dd>Open shapes. One optional tint plane at <b>blue 8%</b> to carry emphasis</dd></div>
+        <div class="spec"><dt>corners</dt><dd><b>2px</b> radius on rectangles &mdash; echoes <code>--radius-sm</code></dd></div>
+        <div class="spec"><dt>highlight</dt><dd>Exactly <b>one</b> gold element per illustration. It marks the payoff</dd></div>
+        <div class="spec"><dt>ground</dt><dd>Flat surface or ink plate. Light Fields sits <b>behind</b> a plate, never behind line art</dd></div>
+      </dl>
+      <h5 style="margin:16px 0 8px">Line palette</h5>
+      <div class="ramp">
+        <div class="sw"><i style="background:#081E42"></i><span>081E42 primary</span></div>
+        <div class="sw"><i style="background:#1056A5"></i><span>1056A5 structure</span></div>
+        <div class="sw"><i style="background:#2896D2"></i><span>2896D2 secondary</span></div>
+        <div class="sw"><i style="background:#F5C518"></i><span>F5C518 highlight</span></div>
+        <div class="sw"><i style="background:#C9D3E2"></i><span>C9D3E2 recede</span></div>
+      </div>
+    </div>
+    <div class="demo">
+      <h5>Scale ladder</h5>
+      <div class="sizes">
+        <figure>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18"/><rect x="5" y="11" width="4" height="8" rx="2"/><rect x="14" y="6" width="4" height="13" rx="2"/><circle cx="16" cy="3" r="1.6" fill="#F5C518" stroke="none"/></svg>
+          <figcaption>24 inline</figcaption>
+        </figure>
+        <figure>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18"/><rect x="5" y="11" width="4" height="8" rx="2"/><rect x="14" y="6" width="4" height="13" rx="2"/><circle cx="16" cy="3" r="1.6" fill="#F5C518" stroke="none"/></svg>
+          <figcaption>48 list</figcaption>
+        </figure>
+        <figure>
+          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18"/><rect x="5" y="11" width="4" height="8" rx="2"/><rect x="14" y="6" width="4" height="13" rx="2"/><circle cx="16" cy="3" r="1.6" fill="#F5C518" stroke="none"/></svg>
+          <figcaption>64&ndash;80 feature</figcaption>
+        </figure>
+      </div>
+      <div class="rules">
+        <p class="yes">Flat, orthographic, front-on</p>
+        <p class="no">Isometric or 3D perspective</p>
+        <p class="yes">Real objects: sensor, sheet, rotor</p>
+        <p class="no">Abstract blobs and swooshes</p>
+        <p class="yes">Strokes only, uniform weight</p>
+        <p class="no">Gradients inside a stroke</p>
+        <p class="yes">Gold reserved for the outcome</p>
+        <p class="no">Drop shadows, emoji, clipart</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Display & Brand Cards" subtitle="Card, Badge, Tag, Avatar, Stat, PillarCard" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--surface-page); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin: 4px 0 10px; }
+  .pillars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Card, Badge, Tag, Avatar, Stat, PillarCard } = window.CelebrationOnPointDesignSystem_2fb49a;
+    const I = (d) => () => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{__html:d}} />;
+    const Msg = I('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>');
+    const Cpu = I('<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/>');
+    const Comp = I('<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88"/>');
+    function Demo() {
+      return (
+        <div>
+          <div className="lbl">Badges &amp; Tags</div>
+          <div className="row">
+            <Badge tone="gold" dot>Live</Badge>
+            <Badge tone="success">On track</Badge>
+            <Badge tone="warning">At risk</Badge>
+            <Badge tone="brand" subtle={false}>Mission</Badge>
+            <Tag icon={<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/></svg>}>Growth &amp; Workforce</Tag>
+            <Tag onRemove={()=>{}}>Q3 Pipeline</Tag>
+          </div>
+          <div className="lbl">Avatars &amp; Stats</div>
+          <div className="row" style={{gap:24}}>
+            <div className="row" style={{margin:0,gap:8}}>
+              <Avatar name="Dana Reyes" size="sm" />
+              <Avatar name="Avi Cohen" size="md" />
+              <Avatar name="Mara Liu" size="lg" />
+            </div>
+            <Stat label="Pipeline velocity" value="+38.4%" delta="12%" deltaDirection="up" />
+            <Stat label="Surfaced revenue" value="$2.1M" delta="3%" deltaDirection="down" />
+          </div>
+          <div className="lbl">Cards</div>
+          <div className="row">
+            <Card tone="light" elevation="md" style={{maxWidth:240}}>
+              <div style={{fontFamily:'var(--font-display)',fontWeight:700,fontSize:18,color:'var(--text-strong)',marginBottom:6}}>Reality Audit</div>
+              <div style={{fontSize:13.5,lineHeight:1.55,color:'var(--text-muted)'}}>Surface what's hidden across message, machines, and mission.</div>
+            </Card>
+            <Card tone="ink" interactive style={{maxWidth:240}}>
+              <div style={{fontFamily:'var(--font-display)',fontWeight:700,fontSize:18,color:'#fff',marginBottom:6}}>Momentum System</div>
+              <div style={{fontSize:13.5,lineHeight:1.55,color:'rgba(255,255,255,0.64)'}}>Make the invisible visible and actionable.</div>
+            </Card>
+          </div>
+          <div className="lbl">PillarCard — the three M's</div>
+          <div className="pillars">
+            <PillarCard theme="momentum" index="M1" eyebrow="What you say" icon={<Msg/>} title="Message" description="Align what you say — clear, consistent, persuasive." />
+            <PillarCard theme="technology" index="M2" eyebrow="How you operate" icon={<Cpu/>} title="Machines" description="Align how you operate — systems, data, automation." />
+            <PillarCard theme="mission" index="M3" eyebrow="Why you exist" icon={<Comp/>} title="Mission" description="Align why you exist — purpose that drives momentum." />
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

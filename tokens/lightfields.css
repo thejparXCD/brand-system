@@ -1,0 +1,143 @@
+/* Celebration OnPoint — Light Fields
+   ---------------------------------------------------------------
+   The brand's signature atmosphere: cool light entering from the
+   left, warm (gold) light from the right, over a near-black ground,
+   with a glow pooling on the "floor." Derived from the brand's
+   social background plates.
+
+   TWO WAYS TO USE
+   ---------------------------------------------------------------
+   1. CSS light fields (scalable, themeable, cheap) — drop an
+      aria-hidden layer inside any positioned, clipped container:
+
+        <section style="position:relative; overflow:hidden">
+          <div class="cop-lightfield cop-lf--pillars" aria-hidden="true"></div>
+          <div style="position:relative"> …content… </div>
+        </section>
+
+      Variants: --pillars  --horizon  --aurora  --purple  --spotlight
+      Add --alive for a slow, reduced-motion-safe breathing drift.
+
+   2. Photographic plates (the exact renders) — for hero/social
+      where you want the original artwork:
+
+        <div class="cop-lf-plate cop-lf-plate--horizon" aria-hidden="true"></div>
+
+   Both layers sit at z-index 0; keep content at position:relative
+   (or higher) so it stacks above.
+*/
+
+:root {
+  /* Light source hues (alpha baked per-layer below) */
+  --lf-blue:   89, 196, 229;   /* @kind other */ /* sky-cyan beam core */
+  --lf-azure:  33, 120, 210;   /* @kind other */ /* ocean-blue body */
+  --lf-gold:   245, 180, 40;   /* @kind other */ /* warm gold body */
+  --lf-gold-hi:255, 225, 150;  /* @kind other */ /* gold beam core */
+  --lf-violet: 123, 58, 237;   /* @kind other */ /* purple beam */
+
+  /* Photographic plates (original renders) */
+  --lf-plate-pillars-bluegold: url("../assets/lightfields/pillars-bluegold.png"); /* @kind other */
+  --lf-plate-pillars-goldup:   url("../assets/lightfields/pillars-goldup.png"); /* @kind other */
+  --lf-plate-rays-blue:        url("../assets/lightfields/rays-blue.png"); /* @kind other */
+  --lf-plate-rays-bluegold:    url("../assets/lightfields/rays-bluegold.png"); /* @kind other */
+  --lf-plate-horizon:          url("../assets/lightfields/horizon-bluegold.png"); /* @kind other */
+  --lf-plate-whispy:           url("../assets/lightfields/whispy-bluegold.png"); /* @kind other */
+  --lf-plate-smoky:            url("../assets/lightfields/smoky-bluegold.png"); /* @kind other */
+  --lf-plate-burst-gold:       url("../assets/lightfields/burst-gold.png"); /* @kind other */
+  --lf-plate-rays-purplegold:  url("../assets/lightfields/rays-purplegold.png"); /* @kind other */
+  --lf-plate-glow-purplegold:  url("../assets/lightfields/glow-purplegold.png"); /* @kind other */
+}
+
+/* ---- Base layer ------------------------------------------------ */
+.cop-lightfield {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: var(--c-ink);
+}
+
+/* ---- Variant: PILLARS — vertical beams rising from the floor --- */
+/* (blue_gold / goldlightup): a blue column lower-left, gold lower-right,
+   each a soft body + a bright thin core, with a pool of light on the floor. */
+.cop-lf--pillars {
+  background-image:
+    radial-gradient(38% 22% at 13% 102%, rgba(var(--lf-blue), 0.42), transparent 72%),
+    radial-gradient(7%  88% at 13% 110%, rgba(var(--lf-azure), 0.42), transparent 72%),
+    radial-gradient(2.4% 82% at 13% 110%, rgba(var(--lf-blue), 0.55), transparent 74%),
+    radial-gradient(40% 22% at 87% 102%, rgba(var(--lf-gold), 0.40), transparent 72%),
+    radial-gradient(8%  88% at 87% 110%, rgba(var(--lf-gold), 0.38), transparent 72%),
+    radial-gradient(2.4% 82% at 87% 110%, rgba(var(--lf-gold-hi), 0.5), transparent 74%);
+}
+
+/* ---- Variant: HORIZON — two arcs meeting at a low horizon ------ */
+/* (fanoutbluegold): blue sweeps in from the left, gold from the right,
+   resolving into a bright horizon line near the bottom. */
+.cop-lf--horizon {
+  background-image:
+    radial-gradient(64% 52% at 4% 98%, rgba(var(--lf-azure), 0.38), transparent 70%),
+    radial-gradient(64% 52% at 96% 98%, rgba(var(--lf-gold), 0.34), transparent 70%),
+    radial-gradient(130% 7% at 50% 100%, rgba(var(--lf-blue), 0.18), transparent 76%),
+    linear-gradient(to top, rgba(var(--lf-blue), 0.08), transparent 32%);
+}
+
+/* ---- Variant: AURORA — soft, high, diffuse glow ---------------- */
+/* (whispybluegold): gentle wash, blue lower-left, gold lower-right,
+   a cool haze from the top. Good behind text-heavy dark sections. */
+.cop-lf--aurora {
+  background-image:
+    radial-gradient(52% 64% at -4% 104%, rgba(var(--lf-azure), 0.34), transparent 68%),
+    radial-gradient(48% 58% at 104% 96%, rgba(var(--lf-gold), 0.26), transparent 68%),
+    radial-gradient(82% 52% at 32% -8%, rgba(16, 86, 165, 0.18), transparent 70%);
+}
+
+/* ---- Variant: PURPLE — purple left, gold right ----------------- */
+/* (purplespires / purplegold): the Tier-2 / event-energy palette. */
+.cop-lf--purple {
+  background-image:
+    radial-gradient(44% 72% at 6% 102%, rgba(var(--lf-violet), 0.40), transparent 70%),
+    radial-gradient(42% 62% at 96% 102%, rgba(var(--lf-gold), 0.30), transparent 70%),
+    radial-gradient(64% 42% at 50% 114%, rgba(80, 40, 160, 0.22), transparent 76%);
+}
+
+/* ---- Variant: SPOTLIGHT — single soft overhead key light ------- */
+/* For centering attention on a dark panel/CTA without side beams. */
+.cop-lf--spotlight {
+  background-image:
+    radial-gradient(58% 70% at 50% -12%, rgba(var(--lf-azure), 0.22), transparent 70%),
+    radial-gradient(44% 44% at 50% 122%, rgba(var(--lf-gold), 0.12), transparent 70%);
+}
+
+/* ---- Optional: slow, reduced-motion-safe breathing ------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .cop-lf--alive {
+    animation: cop-lf-breathe 14s ease-in-out infinite alternate;
+  }
+}
+@keyframes cop-lf-breathe {
+  from { filter: brightness(0.92) saturate(0.96); transform: scale(1); }
+  to   { filter: brightness(1.08) saturate(1.06); transform: scale(1.04); }
+}
+
+/* ---- Photographic plates --------------------------------------- */
+.cop-lf-plate {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--c-ink);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cop-lf-plate--pillars-bluegold { background-image: var(--lf-plate-pillars-bluegold); }
+.cop-lf-plate--pillars-goldup   { background-image: var(--lf-plate-pillars-goldup); }
+.cop-lf-plate--rays-blue        { background-image: var(--lf-plate-rays-blue); }
+.cop-lf-plate--rays-bluegold    { background-image: var(--lf-plate-rays-bluegold); }
+.cop-lf-plate--horizon          { background-image: var(--lf-plate-horizon); }
+.cop-lf-plate--whispy           { background-image: var(--lf-plate-whispy); }
+.cop-lf-plate--smoky            { background-image: var(--lf-plate-smoky); }
+.cop-lf-plate--burst-gold       { background-image: var(--lf-plate-burst-gold); }
+.cop-lf-plate--rays-purplegold  { background-image: var(--lf-plate-rays-purplegold); }
+.cop-lf-plate--glow-purplegold  { background-image: var(--lf-plate-glow-purplegold); }

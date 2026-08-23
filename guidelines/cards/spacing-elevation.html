@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Elevation" subtitle="Cool navy-tinted shadows + brand glows" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px 24px; background: var(--surface-page); display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .box { width: 84px; height: 56px; background: var(--surface-card); border-radius: var(--radius-md); }
+  .item span { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-xs)"></div><span>xs</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-sm)"></div><span>sm</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-md)"></div><span>md</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-lg)"></div><span>lg</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-xl)"></div><span>xl</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--glow-gold)"></div><span>glow-gold</span></div>
+  <div class="item"><div class="box" style="box-shadow:var(--glow-blue)"></div><span>glow-blue</span></div>
+</body>
+</html>

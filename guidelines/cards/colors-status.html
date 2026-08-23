@@ -1,0 +1,22 @@
+<!-- @dsCard group="Colors" viewport="700x130" name="Status" subtitle="Semantic feedback colors" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .sw { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .chip { height: 56px; }
+  .meta { padding: 8px 10px; font-family: var(--font-mono); font-size: 11px; }
+  .meta b { display:block; color: var(--text-strong); font-weight: 600; }
+  .meta span { color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="sw"><div class="chip" style="background:var(--c-success)"></div><div class="meta"><b>Success</b><span>#1F9D6B</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--c-warning)"></div><div class="meta"><b>Warning</b><span>#E8920C</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--c-danger)"></div><div class="meta"><b>Danger</b><span>#DC4B4B</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--c-info)"></div><div class="meta"><b>Info</b><span>#2896D2</span></div></div>
+</body>
+</html>

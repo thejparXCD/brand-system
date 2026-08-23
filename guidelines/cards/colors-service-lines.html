@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Service Lines" subtitle="Four signature gradients + shared gold accent" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .tile { height: 120px; border-radius: var(--radius-lg); padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+  .tile .dot { width: 12px; height: 12px; border-radius: var(--radius-pill); background: var(--c-gold); box-shadow: 0 0 12px var(--c-gold); }
+  .tile b { font-family: var(--font-display); color: #fff; font-size: 14px; line-height: 1.2; letter-spacing: -0.01em; }
+  .tile span { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="tile" style="background:var(--grad-technology)"><div class="dot"></div><div><b>Technology &amp; Infrastructure</b><br><span>violet</span></div></div>
+    <div class="tile" style="background:var(--grad-growth)"><div class="dot"></div><div><b>Growth &amp; Workforce</b><br><span>blue → orange</span></div></div>
+    <div class="tile" style="background:var(--grad-mission)"><div class="dot"></div><div><b>Mission Strategy &amp; Readiness</b><br><span>ocean</span></div></div>
+    <div class="tile" style="background:var(--grad-data)"><div class="dot"></div><div><b>OnPoint Sky Solutions</b><br><span>charcoal · sister-brand co-branding only</span></div></div>
+  </div>
+</body>
+</html>

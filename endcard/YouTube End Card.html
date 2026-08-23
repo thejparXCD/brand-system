@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COP — YouTube End Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --c-sky:#59C4E5; --c-azure:#2896D2; --c-blue:#1056A5;
+    --c-blue-deep:#0E2A6B; --c-navy:#081E42; --c-ink:#0A0814;
+    --c-gold:#F5C518; --c-gold-warm:#F9A02A;
+    --font-display:'Poppins',system-ui,sans-serif;
+    --font-body:'Open Sans',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:#15161a;
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; font-family:var(--font-body);
+    padding:24px;
+  }
+
+  /* Fixed 1280x720 canvas, scaled to fit viewport */
+  .stage{ position:relative; }
+  .card{
+    position:relative;
+    width:1280px; height:720px;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 50% 118%, rgba(40,150,210,.30), transparent 60%),
+      linear-gradient(165deg,#0C2A52 0%, var(--c-navy) 55%, var(--c-ink) 100%);
+    transform-origin:center center;
+    box-shadow:0 30px 90px rgba(0,0,0,.5);
+  }
+
+  /* Light-field plates */
+  .lf{ position:absolute; inset:0; background-size:cover; background-position:center bottom; pointer-events:none; }
+  .lf-rays{ background-image:url('rays-bluegold.png'); opacity:.85; mix-blend-mode:screen; }
+  .lf-burst{
+    position:absolute; left:50%; top:38%; width:900px; height:900px;
+    transform:translate(-50%,-50%);
+    background:url('burst-gold.png') center/contain no-repeat;
+    opacity:.28; mix-blend-mode:screen; pointer-events:none;
+  }
+  .vignette{ position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(80% 70% at 50% 45%, transparent 40%, rgba(8,14,24,.55) 100%); }
+
+  /* ---- Center brand + CTA ---------------------------------- */
+  .center{
+    position:absolute; left:0; right:0; top:50%;
+    transform:translateY(-50%);
+    display:flex; flex-direction:column; align-items:center;
+    text-align:center; z-index:5;
+    /* keep clear of right-side video slots */
+    padding-right:340px;
+    padding-left:56px;
+  }
+  .logo{ width:92px; height:92px; margin-bottom:22px;
+    filter:drop-shadow(0 6px 24px rgba(89,196,229,.45)); }
+  .kicker{
+    font-family:var(--font-display); font-weight:600;
+    letter-spacing:.32em; text-transform:uppercase;
+    font-size:15px; color:var(--c-sky); margin-bottom:14px;
+  }
+  .headline{
+    font-family:var(--font-display); font-weight:800;
+    font-size:58px; line-height:1.02; color:#fff;
+    letter-spacing:-.01em; margin-bottom:10px;
+  }
+  .headline .grad{
+    background:linear-gradient(115deg,var(--c-gold) 0%,var(--c-gold-warm) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .sub{ font-size:18px; color:rgba(226,232,242,.82); font-weight:500; max-width:520px; }
+
+  /* Subscribe pill (visual cue — the real button overlays here) */
+  .sub-row{ display:flex; align-items:center; gap:16px; margin-top:30px; }
+  .sub-pill{
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(120deg,var(--c-gold) 0%,var(--c-gold-warm) 100%);
+    color:var(--c-ink); font-family:var(--font-display); font-weight:700;
+    font-size:16px; letter-spacing:.02em; padding:13px 24px; border-radius:999px;
+    box-shadow:0 8px 28px rgba(245,197,24,.32);
+  }
+  .sub-pill svg{ width:18px; height:18px; }
+
+  /* ---- End-screen safe-zone guides ------------------------- */
+  .guides{ position:absolute; inset:0; z-index:20; pointer-events:none; }
+  .slot{
+    position:absolute; border:2px dashed rgba(89,196,229,.75);
+    border-radius:10px; display:flex; align-items:flex-end; justify-content:flex-start;
+  }
+  .slot .lbl{
+    font-family:var(--font-display); font-weight:600; font-size:13px;
+    color:var(--c-sky); background:rgba(8,14,24,.72); padding:5px 9px;
+    border-radius:6px; margin:8px; letter-spacing:.04em;
+  }
+  /* Two 16:9 video slots on the right (YouTube standard element size) */
+  .slot-v1{ right:64px; top:96px;  width:256px; height:144px; }
+  .slot-v2{ right:64px; top:270px; width:256px; height:144px; }
+  /* Subscribe circle bottom-right */
+  .slot-sub{ right:132px; bottom:88px; width:120px; height:120px;
+    border-radius:50%; align-items:center; justify-content:center; }
+  .slot-sub .lbl{ margin:0; }
+
+  .guides.hide{ display:none; }
+
+  /* Caption under card */
+  .cap{ position:absolute; left:0; right:0; bottom:-40px; text-align:center;
+    color:#8892a4; font-size:13px; font-family:var(--font-body); }
+  .cap b{ color:#c9d3e2; font-weight:600; }
+
+  /* Toggle */
+  .toolbar{
+    position:fixed; top:16px; left:50%; transform:translateX(-50%);
+    display:flex; gap:8px; z-index:100; font-family:var(--font-display);
+  }
+  .toolbar button{
+    background:#1e2129; color:#c9d3e2; border:1px solid #333842;
+    padding:8px 14px; border-radius:8px; font-size:13px; font-weight:600;
+    cursor:pointer; transition:all .15s;
+  }
+  .toolbar button:hover{ background:#282c36; color:#fff; }
+  .toolbar button.on{ background:var(--c-azure); color:#fff; border-color:var(--c-azure); }
+  a{color:var(--c-azure)} a:hover{color:var(--c-sky)}
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <button id="tgl" class="on">Safe-zone guides: ON</button>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="card" id="card">
+      <div class="lf lf-rays"></div>
+      <div class="lf-burst"></div>
+      <div class="vignette"></div>
+
+      <div class="center">
+        <img class="logo" src="logo-mark-white.png" alt="Celebration OnPoint">
+        <div class="kicker">Celebration OnPoint</div>
+        <h1 class="headline">Build momentum.<br><span class="grad">Watch what's next.</span></h1>
+        <p class="sub">New strategy breakdowns every week. Real. Measurable. OnPoint.</p>
+        <div class="sub-row">
+          <span class="sub-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            SUBSCRIBE
+          </span>
+        </div>
+      </div>
+
+      <div class="guides" id="guides">
+        <div class="slot slot-v1"><span class="lbl">Video / Playlist</span></div>
+        <div class="slot slot-v2"><span class="lbl">Video / Playlist</span></div>
+        <div class="slot slot-sub"><span class="lbl">Subscribe</span></div>
+      </div>
+    </div>
+    <div class="cap">1280 × 720 · 16:9 · Elements sit inside the <b>dashed safe zones</b>. Turn guides off to export the clean frame.</div>
+  </div>
+
+<script>
+  // Scale the fixed 1280x720 card to fit the viewport
+  function fit(){
+    const stage=document.getElementById('stage');
+    const pad=80;
+    const s=Math.min((innerWidth-pad)/1280,(innerHeight-pad)/720,1);
+    document.getElementById('card').style.transform='scale('+s+')';
+    // keep caption positioned relative to scaled card
+    stage.style.width=(1280*s)+'px';
+    stage.style.height=(720*s)+'px';
+    document.getElementById('card').style.position='absolute';
+    document.getElementById('card').style.left='0';
+    document.getElementById('card').style.top='0';
+    document.getElementById('card').style.transformOrigin='top left';
+  }
+  addEventListener('resize',fit); fit();
+
+  const tgl=document.getElementById('tgl'), guides=document.getElementById('guides');
+  tgl.addEventListener('click',()=>{
+    const hidden=guides.classList.toggle('hide');
+    tgl.classList.toggle('on',!hidden);
+    tgl.textContent='Safe-zone guides: '+(hidden?'OFF':'ON');
+  });
+</script>
+</body>
+</html>

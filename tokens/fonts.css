@@ -1,0 +1,9 @@
+/* Celebration OnPoint — Webfonts
+   ---------------------------------------------------------------
+   Brand families (specified by the brand), loaded from Google Fonts:
+   - Poppins   : headlines / display (600–700) — confident, geometric, warm
+   - Open Sans : body / UI (400–500, + 600/700) — neutral, highly legible
+   - IBM Plex Mono : data, metrics, eyebrows, code (complementary mono accent)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

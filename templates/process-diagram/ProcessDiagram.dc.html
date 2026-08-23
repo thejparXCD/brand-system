@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Process Diagram" description="Numbered process rail with AIM phase bands, built on the illustration standard" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Open+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="font-family:'Open Sans',system-ui,sans-serif;background:#FFFFFF;color:#0D1424;padding:64px 72px;min-width:1100px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;border-bottom:1px solid #E2E8F2;padding-bottom:22px;margin-bottom:38px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7C8AA1;margin-bottom:10px">Agent Visibility Baseline</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:38px;line-height:1.1;letter-spacing:-.02em;margin:0;color:#081E42">What Happens After You Purchase</h2>
+    </div>
+    <p style="margin:0;max-width:300px;font-size:13.5px;line-height:1.55;color:#5A687E;text-wrap:pretty">Six steps from raw questions to a scored, prioritized baseline you can act on.</p>
+  </div>
+  <sc-if value="{{ showPhases }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:14px">
+      <div style="border-top:3px solid #1056A5;padding-top:9px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#1056A5">Acquire</div></div>
+      <div style="border-top:3px solid #2896D2;padding-top:9px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#2896D2">Integrate</div></div>
+      <div style="border-top:3px solid #F5C518;padding-top:9px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9A7A05">Maximize</div></div>
+    </div>
+  </sc-if>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px;position:relative">
+    <sc-if value="{{ showConnector }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;left:26px;right:26px;top:26px;height:1px;background:linear-gradient(90deg,#C9D3E2 0%,#C9D3E2 78%,#F5C518 100%)"></div>
+    </sc-if>
+    <div style="position:relative">
+      <div style="width:52px;height:52px;border-radius:4px;border:1px solid #E2E8F2;background:#F7F9FC;display:flex;align-items:center;justify-content:center;color:#081E42;position:relative;z-index:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><circle cx="12" cy="10" r="5"/><path d="M12 3v2.5M12 14.5V17M5 10h2.5M16.5 10H19"/></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A6B3C7;margin:16px 0 6px">01</div>
+      <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-.01em;color:#081E42;text-wrap:pretty">We establish ground truth.</p>
+    </div>
+    <div style="position:relative">
+      <div style="width:52px;height:52px;border-radius:4px;border:1px solid #E2E8F2;background:#F7F9FC;display:flex;align-items:center;justify-content:center;color:#081E42;position:relative;z-index:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-5.5 10-5.5S22 12 22 12s-3.6 5.5-10 5.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.2"/><path d="M4 4V2h3M20 4V2h-3M4 20v2h3M20 20v2h-3"/></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A6B3C7;margin:16px 0 6px">02</div>
+      <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-.01em;color:#081E42;text-wrap:pretty">We evaluate machine perception.</p>
+    </div>
+    <div style="position:relative">
+      <div style="width:52px;height:52px;border-radius:4px;border:1px solid #E2E8F2;background:#F7F9FC;display:flex;align-items:center;justify-content:center;color:#081E42;position:relative;z-index:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><rect x="4.5" y="13" width="4" height="7" rx="1"/><rect x="10" y="9" width="4" height="11" rx="1"/><rect x="15.5" y="5" width="4" height="15" rx="1"/></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A6B3C7;margin:16px 0 6px">03</div>
+      <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-.01em;color:#081E42;text-wrap:pretty">We score the results.</p>
+    </div>
+    <div style="position:relative">
+      <div style="width:52px;height:52px;border-radius:4px;border:1px solid #E2E8F2;background:#F7F9FC;display:flex;align-items:center;justify-content:center;color:#081E42;position:relative;z-index:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v6"/><path d="M14 3v5h5"/><path d="M5 3v18h6"/><path d="M8 9h4M8 13h3"/><circle cx="16.5" cy="17.5" r="3.5"/><path d="M19 20l2.5 2.5"/></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A6B3C7;margin:16px 0 6px">04</div>
+      <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-.01em;color:#081E42;text-wrap:pretty">Human experts review the findings.</p>
+    </div>
+    <div style="position:relative">
+      <div style="width:52px;height:52px;border-radius:4px;border:1px solid #E2E8F2;background:#F7F9FC;display:flex;align-items:center;justify-content:center;color:#081E42;position:relative;z-index:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9M4 12h6M4 18h4"/><path d="M18 20V6"/><path d="M14.5 9.5 18 6l3.5 3.5"/></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A6B3C7;margin:16px 0 6px">05</div>
+      <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-.01em;color:#081E42;text-wrap:pretty">We prioritize the roadmap.</p>
+    </div>
+    <div style="position:relative">
+      <div style="width:52px;height:52px;border-radius:4px;border:1px solid rgba(245,197,24,.45);background:rgba(245,197,24,.1);display:flex;align-items:center;justify-content:center;color:#081E42;position:relative;z-index:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v9"/><path d="M14 3v4h4"/><path d="M6 3v18h6"/><circle cx="17" cy="18" r="3.5" fill="#F5C518" stroke="none"/><path d="m15.4 18 1.2 1.2 2.1-2.3" stroke="#081E42"/></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A6B3C7;margin:16px 0 6px">06</div>
+      <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-.01em;color:#081E42;text-wrap:pretty">You receive your baseline.</p>
+    </div>
+  </div>
+  <sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:center;gap:14px;margin-top:44px;padding-top:20px;border-top:1px solid #E2E8F2">
+      <div style="height:3px;width:34px;border-radius:2px;background:linear-gradient(90deg,#1056A5,#F5C518)"></div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7C8AA1">Celebration OnPoint &middot; AIM OnPoint&trade;</span>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:560},&quot;showPhases&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showConnector&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showFooter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showPhases: this.props.showPhases ?? true,
+      showConnector: this.props.showConnector ?? true,
+      showFooter: this.props.showFooter ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Report Cover" description="Letter-portrait cover page for reports, proposals, and quotes — dark and light, with document type, client block, and reference grid" -->
+<helmet>
+<style>
+  html, body { margin: 0; padding: 0; background: #EDEFF4; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+  .rc-lt .rc-bg { background: #FAF6EE !important; }
+  .rc-lt .rc-title { color: #0D1424 !important; }
+  .rc-lt .rc-body { color: #3D4A5C !important; }
+  .rc-lt .rc-meta { color: #7A8698 !important; }
+  .rc-lt .rc-hair { background: rgba(13,20,36,0.14) !important; }
+  .rc-lt .rc-rule-ink { border-color: #0D1424 !important; }
+  .rc-lt .cop-lightfield { background-color: transparent !important; opacity: 0.5 !important; }
+  .rc-bg .cop-lightfield { top: auto; bottom: 0; height: 34%; }
+</style>
+<script src="./ds-base.js"></script>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;background:#EDEFF4;color:#2A3447;padding:56px 40px 96px;">
+<div style="max-width:1180px;margin:0 auto;">
+
+  <header data-screen-label="Spec Header" style="margin-bottom:36px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#2896D2;margin-bottom:12px;">Celebration OnPoint · document system</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:42px;line-height:1.1;letter-spacing:-0.02em;color:#0D1424;margin:0 0 12px;">Report cover</h1>
+    <p style="font-size:16px;line-height:1.65;color:#5A687E;margin:0;max-width:720px;">One cover for reports, proposals, quotes, and assessments. US Letter portrait, 1275 × 1650 at 150 dpi. The document type changes; everything else holds. Shown at 42%.</p>
+  </header>
+
+  <section data-screen-label="Covers" style="display:grid;grid-template-columns:repeat(2,536px);gap:32px;justify-content:start;">
+
+    <!-- DARK COVER -->
+    <div>
+      <div style="width:536px;height:693px;position:relative;border-radius:10px;overflow:hidden;box-shadow:0 14px 40px rgba(13,20,36,0.2);">
+        <div style="position:absolute;top:0;left:0;width:1275px;height:1650px;transform:scale(0.4204);transform-origin:top left;">
+          <div class="rc-bg" style="position:relative;width:1275px;height:1650px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--pillars" aria-hidden="true"></div>
+            <div style="position:absolute;inset:0;padding:110px 105px 90px;display:flex;flex-direction:column;">
+
+              <!-- masthead -->
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="display:flex;align-items:center;gap:22px;">
+                  <div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#F5C518;">C</div>
+                  <div>
+                    <div class="rc-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:28px;letter-spacing:-0.01em;color:#fff;line-height:1.2;">Celebration OnPoint</div>
+                    <div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px;">Message · Machines · Mission</div>
+                  </div>
+                </div>
+                <div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">onpointhq.com</div>
+              </div>
+
+              <!-- title block -->
+              <div style="margin-top:auto;">
+                <div style="display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:12px;background:#F5C518;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;letter-spacing:0.16em;text-transform:uppercase;color:#0A0814;">Assessment report</div>
+                <div class="rc-title" style="margin-top:44px;font-family:'Poppins',sans-serif;font-weight:700;font-size:104px;line-height:1.0;letter-spacing:-0.035em;color:#fff;">Agent Visibility Audit</div>
+                <div class="rc-body" style="margin-top:32px;font-size:36px;line-height:1.45;color:rgba(255,255,255,0.72);max-width:900px;">How your brand appears — and disappears — inside AI answer engines.</div>
+                <div style="margin-top:44px;width:200px;height:6px;background:#F5C518;"></div>
+                <div class="rc-title" style="margin-top:44px;font-family:'Poppins',sans-serif;font-weight:600;font-size:44px;color:#fff;">Prepared for Bastion One</div>
+              </div>
+
+              <!-- reference grid -->
+              <div class="rc-hair" style="margin-top:80px;height:1px;background:rgba(255,255,255,0.16);"></div>
+              <div style="margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+                <div><div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Prepared by</div><div class="rc-title" style="margin-top:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;color:#fff;">Joe Paranteau</div></div>
+                <div><div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Date</div><div class="rc-title" style="margin-top:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;color:#fff;">August 7, 2026</div></div>
+                <div><div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Reference</div><div class="rc-title" style="margin-top:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;color:#fff;">AVA-2026-0807</div></div>
+              </div>
+              <div class="rc-meta" style="margin-top:44px;font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.42);">Confidential — prepared for the named recipient</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Dark · reports &amp; assessments</div>
+    </div>
+
+    <!-- LIGHT COVER -->
+    <div>
+      <div class="rc-lt" style="width:536px;height:693px;position:relative;border-radius:10px;overflow:hidden;box-shadow:0 14px 40px rgba(13,20,36,0.2);">
+        <div style="position:absolute;top:0;left:0;width:1275px;height:1650px;transform:scale(0.4204);transform-origin:top left;">
+          <div class="rc-bg" style="position:relative;width:1275px;height:1650px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+            <div style="position:absolute;inset:0;padding:110px 105px 90px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="display:flex;align-items:center;gap:22px;">
+                  <div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#F5C518;">C</div>
+                  <div>
+                    <div class="rc-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:28px;letter-spacing:-0.01em;color:#fff;line-height:1.2;">Celebration OnPoint</div>
+                    <div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px;">Message · Machines · Mission</div>
+                  </div>
+                </div>
+                <div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">onpointhq.com</div>
+              </div>
+              <div style="margin-top:auto;">
+                <div style="display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:12px;background:#0A0814;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;letter-spacing:0.16em;text-transform:uppercase;color:#F5C518;">Proposal</div>
+                <div class="rc-title" style="margin-top:44px;font-family:'Poppins',sans-serif;font-weight:700;font-size:104px;line-height:1.0;letter-spacing:-0.035em;color:#fff;">Growth &amp; Workforce Enablement</div>
+                <div class="rc-body" style="margin-top:32px;font-size:36px;line-height:1.45;color:rgba(255,255,255,0.72);max-width:900px;">A twelve-week engagement to align message, enablement, and pipeline.</div>
+                <div style="margin-top:44px;width:200px;height:6px;background:#F5C518;"></div>
+                <div class="rc-title" style="margin-top:44px;font-family:'Poppins',sans-serif;font-weight:600;font-size:44px;color:#fff;">Prepared for Northwind Logistics</div>
+              </div>
+              <div class="rc-hair" style="margin-top:80px;height:1px;background:rgba(255,255,255,0.16);"></div>
+              <div style="margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+                <div><div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Prepared by</div><div class="rc-title" style="margin-top:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;color:#fff;">Joe Paranteau</div></div>
+                <div><div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Valid through</div><div class="rc-title" style="margin-top:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;color:#fff;">September 30, 2026</div></div>
+                <div><div class="rc-meta" style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Reference</div><div class="rc-title" style="margin-top:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;color:#fff;">PRO-2026-0142</div></div>
+              </div>
+              <div class="rc-meta" style="margin-top:44px;font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.42);">Confidential — prepared for the named recipient</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Light · proposals &amp; quotes</div>
+    </div>
+
+  </section>
+
+  <section data-screen-label="Rules" style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">The chip names the document</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Assessment report, Proposal, Quote, Statement of Work — one chip, always the same position. Gold on dark, ink on light.</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Client name is a first-class line</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">"Prepared for" sits under the gold rule at 44 px — the recipient should see themselves on the cover.</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Three reference fields</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Author, a date field, and a reference number. Swap the middle label to "Valid through" for quotes and proposals.</div></div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180}}"></script>
+</body>
+</html>

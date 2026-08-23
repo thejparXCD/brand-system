@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Blog Post" description="Joe Paranteau single article — editorial layout with author sidebar, pull quote, related posts, shared nav + footer" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #F7F9FC; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+</style>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;color:#2A3447;background:#F7F9FC;">
+
+  <!-- HEADER -->
+  <header data-screen-label="Header" style="position:sticky;top:0;z-index:50;background:rgba(10,8,20,0.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#fff;letter-spacing:-0.01em;">Joe Paranteau</span>
+      <nav style="display:flex;align-items:center;gap:26px;">
+        <a href="#" style="color:rgba(255,255,255,0.72);font-weight:600;font-size:14px;text-decoration:none;">Speaking</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-weight:600;font-size:14px;text-decoration:none;">The Book</a>
+        <a href="#" style="color:#F5C518;font-weight:600;font-size:14px;text-decoration:none;">Blog</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-weight:600;font-size:14px;text-decoration:none;">Media</a>
+      </nav>
+      <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F5C518;color:#0A0814;font-weight:600;font-size:14px;padding:11px 20px;border-radius:10px;text-decoration:none;" style-hover="background:#F9A02A;">Book Joe to speak</a>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section data-screen-label="Article Hero" style="position:relative;overflow:hidden;background:#0A0814;">
+    <div class="{{ lfClass }}" aria-hidden="true"></div>
+    <div style="position:relative;max-width:860px;margin:0 auto;padding:64px 28px 56px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#0A0814;background:#F5C518;padding:5px 12px;border-radius:999px;">Leadership</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);">July 9, 2026 · 6 min read</span>
+      </div>
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:48px;line-height:1.1;letter-spacing:-0.02em;color:#fff;margin:0 0 18px;">The constraint you're avoiding is the strategy you're missing</h1>
+      <p style="font-size:19px;line-height:1.6;color:rgba(255,255,255,0.66);margin:0;">Why the leaders who grow fastest aren't the ones with the most resources — they're the ones who design around what they lack.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY + SIDEBAR -->
+  <section data-screen-label="Article Body" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:56px 28px 72px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;align-items:start;">
+
+      <!-- Article column -->
+      <article style="max-width:720px;">
+        <sc-if value="{{ showHeroImage }}" hint-placeholder-val="{{ true }}">
+          <div style="height:380px;border-radius:16px;overflow:hidden;background:#0D1424;margin-bottom:40px;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="post-hero-image" placeholder="article hero image" hint-size="100%,380px"></x-import></div>
+        </sc-if>
+        <p style="font-size:18px;line-height:1.75;color:#2A3447;margin:0 0 26px;">Every leader I meet is waiting for something. More budget. More headcount. A better market. The story is always the same: <em style="font-style:italic;">once conditions improve, we'll make our move.</em> Here's the uncomfortable truth I learned in uniform and re-learned in business — conditions don't improve on schedule, and the leaders who win never waited for them to.</p>
+        <p style="font-size:18px;line-height:1.75;color:#2A3447;margin:0 0 26px;">The constraint you keep working around — the small team, the thin budget, the crowded market — isn't an obstacle to your strategy. Handled deliberately, it <strong>is</strong> your strategy. Constraints force focus, and focus is the one advantage money can't buy.</p>
+
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.02em;color:#0D1424;margin:44px 0 18px;">Constraint is a forcing function</h2>
+        <p style="font-size:18px;line-height:1.75;color:#2A3447;margin:0 0 26px;">When you can't do everything, you're forced to decide what actually matters. Most organizations never make that decision — abundance lets them avoid it. A resourced team runs ten mediocre plays; a constrained team runs one great one. That's not a consolation prize. It's asymmetry.</p>
+
+        <!-- Pull quote -->
+        <blockquote style="position:relative;margin:40px 0;padding:32px 36px;background:#0A0814;border-radius:16px;overflow:hidden;">
+          <div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div>
+          <p style="position:relative;font-family:'Poppins',sans-serif;font-weight:600;font-size:24px;line-height:1.4;letter-spacing:-0.01em;color:#fff;margin:0;">"You do not need perfect conditions to grow. <span style="background:linear-gradient(120deg,#F5C518,#F9A02A);-webkit-background-clip:text;background-clip:text;color:transparent;">You need to design advantage</span> from the limits you already have."</p>
+        </blockquote>
+
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.02em;color:#0D1424;margin:44px 0 18px;">Three moves to make this week</h2>
+        <p style="font-size:18px;line-height:1.75;color:#2A3447;margin:0 0 18px;">Don't wait for the offsite. Start here:</p>
+        <ol style="margin:0 0 26px;padding-left:24px;display:grid;gap:14px;">
+          <li style="font-size:18px;line-height:1.7;color:#2A3447;"><strong>Name the constraint out loud.</strong> Write down the limit your team tiptoes around. Naming it turns anxiety into a design problem.</li>
+          <li style="font-size:18px;line-height:1.7;color:#2A3447;"><strong>Ask what it forces you to do well.</strong> A small team can't do everything — which means it can be unignorable at one thing. Pick it.</li>
+          <li style="font-size:18px;line-height:1.7;color:#2A3447;"><strong>Kill one initiative.</strong> Constraint-driven strategy dies from addition. Free the energy your best play needs.</li>
+        </ol>
+        <p style="font-size:18px;line-height:1.75;color:#2A3447;margin:0 0 26px;">The market doesn't reward the best-resourced player. It rewards the player whose position their competitors can't copy. Your limits are the raw material of that position — if you design with them instead of despite them.</p>
+
+        <!-- Tags -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid #E2E8F2;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">Leadership</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">Strategy</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">Asymmetric by Design</span>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside style="display:grid;gap:24px;position:sticky;top:88px;">
+        <!-- Author card -->
+        <div style="background:#0A0814;border-radius:16px;overflow:hidden;position:relative;">
+          <div class="cop-lightfield cop-lf--pillars" aria-hidden="true"></div>
+          <div style="position:relative;padding:26px;display:grid;gap:14px;justify-items:start;">
+            <img src="./headshot.jpg" alt="Joe Paranteau" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid rgba(245,197,24,0.5);" />
+            <div>
+              <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#fff;">Joe Paranteau</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F5C518;margin-top:4px;">Author · Keynote Speaker</div>
+            </div>
+            <p style="font-size:13px;line-height:1.6;color:rgba(255,255,255,0.66);margin:0;">Author of <em style="font-style:italic;">Asymmetric by Design</em>. Military veteran and tech entrepreneur helping leaders turn limits into growth advantage.</p>
+            <a href="#" style="display:inline-flex;align-items:center;background:#F5C518;color:#0A0814;font-weight:600;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;" style-hover="background:#F9A02A;">Book Joe to speak</a>
+          </div>
+        </div>
+
+        <!-- Related posts -->
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:16px;padding:24px;display:grid;gap:18px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Related</div>
+          <sc-for list="{{ related }}" as="rel" hint-placeholder-count="3">
+            <a href="#" style="display:grid;gap:5px;text-decoration:none;padding-bottom:16px;border-bottom:1px solid #EEF2F8;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#2896D2;">{{ rel.category }}</span>
+              <span style="font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;line-height:1.35;color:#0D1424;">{{ rel.title }}</span>
+              <span style="font-size:12px;color:#8492A6;">{{ rel.meta }}</span>
+            </a>
+          </sc-for>
+        </div>
+
+        <!-- Newsletter box -->
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:16px;padding:24px;display:grid;gap:12px;">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;">Get the edge, weekly.</div>
+          <p style="font-size:13px;line-height:1.55;color:#5A687E;margin:0;">One idea each week on designing advantage from constraint.</p>
+          <input type="email" placeholder="you@company.com" style="padding:11px 14px;border-radius:8px;border:1px solid #E2E8F2;background:#F7F9FC;color:#2A3447;font-size:14px;font-family:'Open Sans',sans-serif;box-sizing:border-box;width:100%;"></input>
+          <a href="#" style="display:inline-flex;align-items:center;justify-content:center;background:#0A0814;color:#fff;font-weight:600;font-size:13px;padding:11px 18px;border-radius:8px;text-decoration:none;" style-hover="background:#1A1430;">Subscribe</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section data-screen-label="CTA" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 28px 88px;">
+      <div style="position:relative;overflow:hidden;border-radius:32px;background:#0A0814;border:1px solid rgba(255,255,255,0.08);padding:56px;">
+        <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+          <div style="max-width:560px;">
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;color:#fff;margin:0 0 12px;">Bring this idea to your stage.</h2>
+            <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,0.75);margin:0;">Joe delivers keynotes on turning limits into growth advantage — for leadership teams, sales kickoffs, and industry events.</p>
+          </div>
+          <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F5C518;color:#0A0814;font-weight:600;font-size:16px;padding:16px 28px;border-radius:10px;text-decoration:none;transition:all 200ms cubic-bezier(0.16,1,0.3,1);" style-hover="background:#F9A02A;transform:translateY(-2px);">Book Joe to speak</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-screen-label="Footer" style="position:relative;overflow:hidden;background:#0A0814;color:#fff;">
+    <div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:56px 28px 36px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;">
+      <div style="display:grid;gap:12px;align-content:start;">
+        <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:#fff;">Joe Paranteau</span>
+        <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin:0;max-width:340px;">Author of <em style="font-style:italic;">Asymmetric by Design</em>. Keynote speaker, tech entrepreneur, military veteran.</p>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Explore</div>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Speaking</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">The Book</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Blog</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Media kit</a>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Connect</div>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">LinkedIn ↗</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Book Joe to speak</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Celebration OnPoint ↗</a>
+      </div>
+    </div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 28px 28px;">
+      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;font-size:13px;color:rgba(255,255,255,0.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <span>© 2026 Joe Paranteau. All rights reserved.</span>
+        <span style="display:flex;gap:18px;"><a href="#" style="color:rgba(255,255,255,0.45);text-decoration:none;">Privacy</a><a href="#" style="color:rgba(255,255,255,0.45);text-decoration:none;">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1440},
+  &quot;lightfield&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;pillars&quot;, &quot;horizon&quot;, &quot;aurora&quot;, &quot;spotlight&quot;], &quot;default&quot;: &quot;aurora&quot;, &quot;tsType&quot;: &quot;'pillars' | 'horizon' | 'aurora' | 'spotlight'&quot;, &quot;section&quot;: &quot;Atmosphere&quot;},
+  &quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Atmosphere&quot;},
+  &quot;showHeroImage&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const lf = this.props.lightfield ?? 'aurora';
+    const alive = (this.props.motion ?? true) ? ' cop-lf--alive' : '';
+    return {
+      lfClass: 'cop-lightfield cop-lf--' + lf + alive,
+      showHeroImage: this.props.showHeroImage ?? true,
+      related: [
+        { category: 'Sales', title: 'Sell the constraint, not around it', meta: 'June 2026 \u00b7 5 min read' },
+        { category: 'Leadership', title: 'What the military taught me about resource-poor planning', meta: 'June 2026 \u00b7 7 min read' },
+        { category: 'The Book', title: 'Why I called it Asymmetric by Design', meta: 'May 2026 \u00b7 6 min read' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

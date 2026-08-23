@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Blog Index" description="Joe Paranteau blog index — dark ink hero, featured post, post grid, newsletter CTA, shared nav + footer" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #F7F9FC; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+</style>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;color:#2A3447;background:#F7F9FC;">
+
+  <!-- HEADER -->
+  <header data-screen-label="Header" style="position:sticky;top:0;z-index:50;background:rgba(10,8,20,0.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#fff;letter-spacing:-0.01em;">Joe Paranteau</span>
+      <nav style="display:flex;align-items:center;gap:26px;">
+        <a href="#" style="color:rgba(255,255,255,0.72);font-weight:600;font-size:14px;text-decoration:none;">Speaking</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-weight:600;font-size:14px;text-decoration:none;">The Book</a>
+        <a href="#" style="color:#F5C518;font-weight:600;font-size:14px;text-decoration:none;">Blog</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-weight:600;font-size:14px;text-decoration:none;">Media</a>
+      </nav>
+      <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F5C518;color:#0A0814;font-weight:600;font-size:14px;padding:11px 20px;border-radius:10px;text-decoration:none;" style-hover="background:#F9A02A;">Book Joe to speak</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section data-screen-label="Blog Hero" style="position:relative;overflow:hidden;background:#0A0814;">
+    <div class="{{ lfClass }}" aria-hidden="true"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:72px 28px 64px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#F5C518;margin-bottom:16px;">The blog</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:56px;line-height:1.05;letter-spacing:-0.02em;color:#fff;margin:0 0 16px;max-width:760px;">The Asymmetric Edge</h1>
+      <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,0.66);max-width:560px;margin:0;">Field notes on turning limits into growth advantage — leadership, sales, and building under constraint.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED POST -->
+  <section data-screen-label="Featured" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:56px 28px 8px;">
+      <a href="#" style="display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #E2E8F2;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(13,20,36,0.06);transition:box-shadow 200ms ease, transform 200ms ease;" style-hover="box-shadow:0 12px 32px rgba(13,20,36,0.12);transform:translateY(-2px);">
+        <div style="min-height:340px;background:#0D1424;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="blog-featured" placeholder="featured post image" hint-size="100%,340px"></x-import></div>
+        <div style="padding:40px 40px 36px;display:flex;flex-direction:column;justify-content:center;gap:14px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#0A0814;background:#F5C518;padding:4px 10px;border-radius:999px;">Featured</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2896D2;">Leadership</span>
+          </div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:30px;line-height:1.15;letter-spacing:-0.02em;color:#0D1424;margin:0;">The constraint you're avoiding is the strategy you're missing</h2>
+          <p style="font-size:16px;line-height:1.6;color:#5A687E;margin:0;">Why the leaders who grow fastest aren't the ones with the most resources — they're the ones who design around what they lack.</p>
+          <div style="font-size:13px;color:#8492A6;">July 2026 · 6 min read</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTER + GRID -->
+  <section data-screen-label="Post Grid" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 28px 72px;">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;background:#0A0814;color:#fff;">All</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">Leadership</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">Sales</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">Speaking</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E2E8F2;color:#5A687E;">The Book</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <sc-for list="{{ posts }}" as="post" hint-placeholder-count="6">
+          <a href="#" style="display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #E2E8F2;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(13,20,36,0.06);transition:box-shadow 200ms ease, transform 200ms ease;" style-hover="box-shadow:0 12px 32px rgba(13,20,36,0.12);transform:translateY(-2px);">
+            <div style="height:180px;background:#0D1424;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ post.slotId }}" placeholder="post image" hint-size="100%,180px"></x-import></div>
+            <div style="padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;flex:1;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2896D2;">{{ post.category }}</div>
+              <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-0.01em;color:#0D1424;margin:0;">{{ post.title }}</h3>
+              <p style="font-size:14px;line-height:1.55;color:#5A687E;margin:0;flex:1;">{{ post.excerpt }}</p>
+              <div style="font-size:13px;color:#8492A6;">{{ post.meta }}</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <sc-if value="{{ showNewsletter }}" hint-placeholder-val="{{ true }}">
+    <section data-screen-label="Newsletter" style="background:#F7F9FC;">
+      <div style="max-width:1200px;margin:0 auto;padding:0 28px 88px;">
+        <div style="position:relative;overflow:hidden;border-radius:32px;background:#0A0814;border:1px solid rgba(255,255,255,0.08);padding:56px;">
+          <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+          <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+            <div style="max-width:520px;">
+              <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;color:#fff;margin:0 0 12px;">Get the edge, weekly.</h2>
+              <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,0.75);margin:0;">One idea each week on designing advantage from constraint. No noise.</p>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <input type="email" placeholder="you@company.com" style="padding:14px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#fff;font-size:15px;min-width:260px;font-family:'Open Sans',sans-serif;"></input>
+              <a href="#" style="display:inline-flex;align-items:center;background:#F5C518;color:#0A0814;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;text-decoration:none;" style-hover="background:#F9A02A;">Subscribe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <footer data-screen-label="Footer" style="position:relative;overflow:hidden;background:#0A0814;color:#fff;">
+    <div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:56px 28px 36px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;">
+      <div style="display:grid;gap:12px;align-content:start;">
+        <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:#fff;">Joe Paranteau</span>
+        <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin:0;max-width:340px;">Author of <em style="font-style:italic;">Asymmetric by Design</em>. Keynote speaker, tech entrepreneur, military veteran.</p>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Explore</div>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Speaking</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">The Book</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Blog</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Media kit</a>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Connect</div>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">LinkedIn ↗</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Book Joe to speak</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Celebration OnPoint ↗</a>
+      </div>
+    </div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 28px 28px;">
+      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;font-size:13px;color:rgba(255,255,255,0.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <span>© 2026 Joe Paranteau. All rights reserved.</span>
+        <span style="display:flex;gap:18px;"><a href="#" style="color:rgba(255,255,255,0.45);text-decoration:none;">Privacy</a><a href="#" style="color:rgba(255,255,255,0.45);text-decoration:none;">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1440},
+  &quot;lightfield&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;pillars&quot;, &quot;horizon&quot;, &quot;aurora&quot;, &quot;spotlight&quot;], &quot;default&quot;: &quot;aurora&quot;, &quot;tsType&quot;: &quot;'pillars' | 'horizon' | 'aurora' | 'spotlight'&quot;, &quot;section&quot;: &quot;Atmosphere&quot;},
+  &quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Atmosphere&quot;},
+  &quot;showNewsletter&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const lf = this.props.lightfield ?? 'aurora';
+    const alive = (this.props.motion ?? true) ? ' cop-lf--alive' : '';
+    return {
+      lfClass: 'cop-lightfield cop-lf--' + lf + alive,
+      showNewsletter: this.props.showNewsletter ?? true,
+      posts: [
+        { slotId: 'blog-card-1', category: 'Sales', title: 'Sell the constraint, not around it', excerpt: 'Your buyer\u2019s limits are the most honest brief you\u2019ll ever get. Use them.', meta: 'June 2026 \u00b7 5 min read' },
+        { slotId: 'blog-card-2', category: 'Leadership', title: 'What the military taught me about resource-poor planning', excerpt: 'Doctrine for when you have less than you need and no time to wait.', meta: 'June 2026 \u00b7 7 min read' },
+        { slotId: 'blog-card-3', category: 'Speaking', title: 'The keynote question I get in every Q&A', excerpt: 'And the answer that changes how rooms think about growth.', meta: 'May 2026 \u00b7 4 min read' },
+        { slotId: 'blog-card-4', category: 'The Book', title: 'Why I called it Asymmetric by Design', excerpt: 'Asymmetry isn\u2019t an accident to survive. It\u2019s a position to engineer.', meta: 'May 2026 \u00b7 6 min read' },
+        { slotId: 'blog-card-5', category: 'Leadership', title: 'Stop waiting for perfect conditions', excerpt: 'A working checklist for moving before you feel ready.', meta: 'April 2026 \u00b7 5 min read' },
+        { slotId: 'blog-card-6', category: 'Sales', title: 'The smallest team wins the biggest deals', excerpt: 'Three asymmetric plays for outselling teams ten times your size.', meta: 'April 2026 \u00b7 8 min read' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

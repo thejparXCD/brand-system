@@ -1,0 +1,345 @@
+/* ============================================================
+   Celebration OnPoint — WordPress / Elementor brand stylesheet
+   Flattened from the design-system tokens. Enqueue site-wide
+   (child theme or Site Settings > Custom CSS).
+   Fonts: self-host Poppins / Open Sans / IBM Plex Mono via
+   Elementor Custom Fonts — no @import here by design.
+   Light-field plates: upload assets/lightfields/*.png to the
+   Media Library and update the --lf-plate-* URLs below.
+   ============================================================ */
+
+:root {
+  /* Brand core */
+  --c-sky: #59C4E5; --c-azure: #2896D2; --c-blue: #1056A5;
+  --c-blue-deep: #0E2A6B; --c-navy: #081E42; --c-ink: #0A0814;
+  --c-gold: #F5C518; --c-gold-warm: #F9A02A; --c-gold-deep: #E8920C;
+  --c-violet: #3A1270;
+
+  /* Neutrals (navy-tinted) */
+  --n-0:#FFFFFF; --n-25:#F7F9FC; --n-50:#EEF2F8; --n-100:#E2E8F2;
+  --n-200:#C9D3E2; --n-300:#A6B3C7; --n-400:#7C8AA1; --n-500:#5A687E;
+  --n-600:#404C61; --n-700:#2A3447; --n-800:#182032; --n-900:#0D1424;
+
+  /* Status */
+  --c-success:#1F9D6B; --c-warning:#E8920C; --c-danger:#DC4B4B; --c-info:#2896D2;
+
+  /* Semantic */
+  --surface-page: var(--n-25); --surface-card: var(--n-0);
+  --surface-sunken: var(--n-50); --surface-inverse: var(--c-navy);
+  --text-strong: var(--n-900); --text-body: var(--n-700);
+  --text-muted: var(--n-500); --text-faint: var(--n-400);
+  --border-subtle: var(--n-100); --border-default: var(--n-200);
+
+  /* Type */
+  --font-display: 'Poppins','Segoe UI',system-ui,sans-serif;
+  --font-body: 'Open Sans',system-ui,-apple-system,sans-serif;
+  --font-mono: 'IBM Plex Mono',ui-monospace,monospace;
+
+  /* Spacing / radii */
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-6:24px; --space-8:32px; --space-12:48px; --space-16:64px;
+  --space-20:80px; --space-24:96px;
+  --radius-sm:6px; --radius-md:10px; --radius-lg:16px;
+  --radius-xl:24px; --radius-2xl:32px; --radius-pill:999px;
+  --container-max:1200px;
+
+  /* Elevation (navy-tinted, never black) */
+  --shadow-sm: 0 1px 3px rgba(8,30,66,.08), 0 1px 2px rgba(8,30,66,.06);
+  --shadow-md: 0 4px 12px rgba(8,30,66,.10), 0 2px 4px rgba(8,30,66,.06);
+  --shadow-lg: 0 12px 28px rgba(8,30,66,.14), 0 4px 8px rgba(8,30,66,.08);
+  --shadow-xl: 0 24px 56px rgba(8,30,66,.20), 0 8px 16px rgba(8,30,66,.10);
+  --glow-gold: 0 0 0 1px rgba(245,197,24,.4), 0 8px 28px rgba(245,197,24,.28);
+  --ring: 0 0 0 3px rgba(40,150,210,.35);
+
+  /* Motion */
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --dur-base: 200ms;
+  --transition: all var(--dur-base) var(--ease-out);
+
+  /* Brand gradients */
+  --grad-c: linear-gradient(150deg,var(--c-sky) 0%,var(--c-blue) 45%,var(--c-navy) 100%);
+  --grad-bolt: linear-gradient(120deg,var(--c-gold) 0%,var(--c-gold-warm) 100%);
+  --grad-momentum: linear-gradient(115deg,var(--c-blue-deep) 0%,var(--c-azure) 100%);
+  --grad-technology: radial-gradient(80% 65% at 16% -6%, rgba(123,58,237,.62), transparent 64%), radial-gradient(50% 30% at 100% 106%, rgba(245,180,40,.16), transparent 72%), linear-gradient(165deg,#160A32 0%,#0A0814 70%);
+  --grad-growth: radial-gradient(82% 66% at 88% -6%, rgba(245,160,30,.60), transparent 64%), radial-gradient(48% 30% at 0% 106%, rgba(33,120,210,.28), transparent 72%), linear-gradient(165deg,#1A1430 0%,#0A0E22 72%);
+  --grad-mission: radial-gradient(82% 66% at 16% -6%, rgba(40,150,210,.60), transparent 64%), radial-gradient(46% 30% at 104% 106%, rgba(245,180,40,.15), transparent 72%), linear-gradient(165deg,#0C2A52 0%,#081E42 74%);
+
+  /* Light-field hues */
+  --lf-blue: 89,196,229; --lf-azure: 33,120,210;
+  --lf-gold: 245,180,40; --lf-gold-hi: 255,225,150; --lf-violet: 123,58,237;
+
+  /* Light-field plates — REPLACE with Media Library URLs after upload */
+  --lf-plate-pillars: url('/wp-content/uploads/cop-lightfields/pillars-bluegold.png');
+  --lf-plate-horizon: url('/wp-content/uploads/cop-lightfields/horizon-bluegold.png');
+  --lf-plate-rays: url('/wp-content/uploads/cop-lightfields/rays-bluegold.png');
+  --lf-plate-whispy: url('/wp-content/uploads/cop-lightfields/whispy-bluegold.png');
+  --lf-plate-smoky: url('/wp-content/uploads/cop-lightfields/smoky-bluegold.png');
+  --lf-plate-burst-gold: url('/wp-content/uploads/cop-lightfields/burst-gold.png');
+}
+
+/* ---- Layout helpers ---------------------------------------- */
+.cop-container { max-width: var(--container-max); margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+.cop-section { padding: 88px 0; background: var(--surface-page); }
+.cop-section--dark { position: relative; overflow: hidden; background: var(--c-ink); color: #fff; }
+.cop-section--card { background: var(--surface-card); }
+@media (max-width: 767px) { .cop-section, .cop-section--dark { padding: 56px 0; } }
+
+/* ---- Type helpers ------------------------------------------- */
+.cop-eyebrow {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--c-azure);
+}
+.cop-eyebrow--gold { color: var(--c-gold); }
+.cop-rule { height: 3px; width: 36px; border-radius: 2px; background: var(--grad-bolt); }
+.cop-grad-text {
+  background: var(--grad-bolt);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---- Buttons ------------------------------------------------ */
+.cop-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 600; font-size: 16px; line-height: 1;
+  padding: 15px 26px; border-radius: var(--radius-md); border: 1.5px solid transparent;
+  cursor: pointer; text-decoration: none; transition: var(--transition);
+}
+.cop-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+.cop-btn--primary { background: var(--c-gold); color: var(--c-ink); }
+.cop-btn--primary:hover { background: var(--c-gold-warm); color: var(--c-ink); transform: translateY(-2px); box-shadow: var(--glow-gold); }
+.cop-btn--secondary { background: var(--c-blue); color: #fff; }
+.cop-btn--secondary:hover { background: var(--c-blue-deep); color: #fff; }
+.cop-btn--outline { background: transparent; border-color: var(--border-default); color: var(--text-strong); }
+.cop-btn--outline:hover { border-color: var(--n-300); background: var(--n-50); color: var(--text-strong); }
+.cop-btn--outline-dark { background: transparent; border-color: rgba(255,255,255,.28); color: #fff; }
+.cop-btn--outline-dark:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); color: #fff; }
+.cop-btn--ghost { background: transparent; color: var(--c-blue); }
+.cop-btn--ghost:hover { background: var(--n-50); }
+
+/* ---- Cards --------------------------------------------------- */
+.cop-card {
+  background: var(--surface-card); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.cop-card--hover:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.cop-card--ink {
+  background: var(--c-ink); border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius-lg); padding: 28px; color: #fff; box-shadow: none;
+}
+.cop-glass {
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius-xl); padding: 28px; backdrop-filter: blur(8px);
+}
+
+/* Service-line pillar cards (ink + radial wash + momentum rule) */
+.cop-pillar {
+  position: relative; overflow: hidden; border-radius: var(--radius-lg);
+  padding: 24px; min-height: 240px; color: #fff;
+  border: 1px solid rgba(255,255,255,.10);
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  box-shadow: var(--shadow-md); transition: var(--transition);
+}
+.cop-pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+.cop-pillar--message  { background: var(--grad-growth); }
+.cop-pillar--machines { background: var(--grad-technology); }
+.cop-pillar--mission  { background: var(--grad-mission); }
+
+/* ---- Stats ---------------------------------------------------- */
+.cop-stat__value {
+  font-family: var(--font-mono); font-weight: 500; font-size: 34px;
+  letter-spacing: -0.01em; color: var(--text-strong); line-height: 1.1;
+}
+.cop-section--dark .cop-stat__value, .cop-card--ink .cop-stat__value, .cop-glass .cop-stat__value { color: #fff; }
+.cop-stat__label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted); margin-top: 6px;
+}
+.cop-section--dark .cop-stat__label, .cop-glass .cop-stat__label { color: rgba(255,255,255,.55); }
+.cop-stat__delta { font-family: var(--font-mono); font-size: 13px; color: var(--c-success); }
+
+/* ---- Chips (6 C's) & badges ----------------------------------- */
+.cop-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  color: var(--c-blue); padding: 4px 12px; border-radius: var(--radius-pill);
+  background: rgba(16,86,165,.08); border: 1px solid rgba(16,86,165,.16);
+}
+.cop-badge--gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--c-gold); padding: 6px 14px; border-radius: var(--radius-pill);
+  background: rgba(245,197,24,.12); border: 1px solid rgba(245,197,24,.3);
+}
+
+/* ---- Header / footer chrome ----------------------------------- */
+.cop-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10,8,20,.8); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.cop-header a { color: rgba(255,255,255,.72); font-family: var(--font-body); font-weight: 600; font-size: 14px; text-decoration: none; transition: var(--transition); }
+.cop-header a:hover { color: #fff; }
+
+/* ---- Light fields (CSS atmospheres) ---------------------------- */
+.cop-lightfield {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  overflow: hidden; background-color: var(--c-ink);
+}
+.cop-lightfield ~ * { position: relative; }
+.cop-lf--pillars { background-image:
+  radial-gradient(38% 22% at 13% 102%, rgba(var(--lf-blue),.42), transparent 72%),
+  radial-gradient(7% 88% at 13% 110%, rgba(var(--lf-azure),.42), transparent 72%),
+  radial-gradient(2.4% 82% at 13% 110%, rgba(var(--lf-blue),.55), transparent 74%),
+  radial-gradient(40% 22% at 87% 102%, rgba(var(--lf-gold),.40), transparent 72%),
+  radial-gradient(8% 88% at 87% 110%, rgba(var(--lf-gold),.38), transparent 72%),
+  radial-gradient(2.4% 82% at 87% 110%, rgba(var(--lf-gold-hi),.5), transparent 74%); }
+.cop-lf--horizon { background-image:
+  radial-gradient(64% 52% at 4% 98%, rgba(var(--lf-azure),.38), transparent 70%),
+  radial-gradient(64% 52% at 96% 98%, rgba(var(--lf-gold),.34), transparent 70%),
+  radial-gradient(130% 7% at 50% 100%, rgba(var(--lf-blue),.18), transparent 76%),
+  linear-gradient(to top, rgba(var(--lf-blue),.08), transparent 32%); }
+.cop-lf--aurora { background-image:
+  radial-gradient(52% 64% at -4% 104%, rgba(var(--lf-azure),.34), transparent 68%),
+  radial-gradient(48% 58% at 104% 96%, rgba(var(--lf-gold),.26), transparent 68%),
+  radial-gradient(82% 52% at 32% -8%, rgba(16,86,165,.18), transparent 70%); }
+.cop-lf--purple { background-image:
+  radial-gradient(44% 72% at 6% 102%, rgba(var(--lf-violet),.40), transparent 70%),
+  radial-gradient(42% 62% at 96% 102%, rgba(var(--lf-gold),.30), transparent 70%),
+  radial-gradient(64% 42% at 50% 114%, rgba(80,40,160,.22), transparent 76%); }
+.cop-lf--spotlight { background-image:
+  radial-gradient(58% 70% at 50% -12%, rgba(var(--lf-azure),.22), transparent 70%),
+  radial-gradient(44% 44% at 50% 122%, rgba(var(--lf-gold),.12), transparent 70%); }
+@media (prefers-reduced-motion: no-preference) {
+  .cop-lf--alive { animation: cop-lf-breathe 14s ease-in-out infinite alternate; }
+}
+@keyframes cop-lf-breathe {
+  from { filter: brightness(.92) saturate(.96); transform: scale(1); }
+  to   { filter: brightness(1.08) saturate(1.06); transform: scale(1.04); }
+}
+
+/* Photographic plates */
+.cop-lf-plate {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-color: var(--c-ink); background-size: cover;
+  background-position: center; background-repeat: no-repeat;
+}
+.cop-lf-plate--pillars { background-image: var(--lf-plate-pillars); }
+.cop-lf-plate--horizon { background-image: var(--lf-plate-horizon); }
+.cop-lf-plate--rays    { background-image: var(--lf-plate-rays); }
+.cop-lf-plate--whispy  { background-image: var(--lf-plate-whispy); }
+.cop-lf-plate--smoky   { background-image: var(--lf-plate-smoky); }
+.cop-lf-plate--burst   { background-image: var(--lf-plate-burst-gold); }
+
+/* ---- Video hero (Bunny.net direct MP4) --------------------------
+   Markup inside a .cop-section--dark hero:
+     <div class="cop-video-bg">
+       <video autoplay muted loop playsinline preload="metadata"
+              poster="{poster.jpg}">
+         <source src="https://{pullzone}.b-cdn.net/{video}/play_720p.mp4" type="video/mp4">
+       </video>
+       <div class="cop-video-scrim"></div>
+     </div>
+   Video replaces the light field — never use both in one hero.
+   Poster should match the light-field look (dark navy, low contrast). */
+.cop-video-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  overflow: hidden; background-color: var(--c-ink);
+}
+.cop-video-bg ~ * { position: relative; }
+.cop-video-bg video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  filter: saturate(.85) brightness(.8);
+}
+.cop-video-scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(10,8,20,.88) 0%, rgba(8,30,66,.72) 48%, rgba(10,8,20,.55) 100%),
+    linear-gradient(to top, rgba(10,8,20,.65), transparent 45%);
+}
+/* Mobile + reduced motion: hide video, fall back to poster/light field */
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .cop-video-bg video { display: none; }
+  .cop-video-bg { background-image: var(--lf-plate-pillars); background-size: cover; background-position: center; }
+}
+
+/* ---- Tier 2: Precision Authority -------------------------------- */
+.cop-grid-overlay {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(80% 80% at 50% 40%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(80% 80% at 50% 40%, #000 30%, transparent 100%);
+}
+
+/* ---- Form plugin skin (wrap the form widget in .cop-form) -------- */
+.cop-form label {
+  font-family: var(--font-mono) !important; font-size: 11px !important;
+  letter-spacing: .12em !important; text-transform: uppercase !important;
+  color: var(--text-muted) !important; margin-bottom: 6px !important;
+}
+.cop-form input[type="text"], .cop-form input[type="email"], .cop-form input[type="tel"],
+.cop-form select, .cop-form textarea {
+  font-family: var(--font-body) !important; font-size: 15px !important;
+  color: var(--text-strong) !important; background: var(--surface-card) !important;
+  border: 1.5px solid var(--border-default) !important; border-radius: var(--radius-md) !important;
+  padding: 12px 14px !important; box-shadow: none !important; transition: var(--transition) !important;
+}
+.cop-form input:focus, .cop-form select:focus, .cop-form textarea:focus {
+  border-color: var(--c-azure) !important; box-shadow: var(--ring) !important; outline: none !important;
+}
+.cop-form button[type="submit"], .cop-form input[type="submit"] {
+  font-family: var(--font-body) !important; font-weight: 600 !important; font-size: 16px !important;
+  background: var(--c-gold) !important; color: var(--c-ink) !important;
+  border: none !important; border-radius: var(--radius-md) !important;
+  padding: 15px 26px !important; transition: var(--transition) !important; cursor: pointer;
+}
+.cop-form button[type="submit"]:hover, .cop-form input[type="submit"]:hover {
+  background: var(--c-gold-warm) !important; box-shadow: var(--glow-gold) !important;
+}
+
+/* ---- Border Beam (see BORDER-BEAMS.md) --------------------------- *
+   One bright arc of light orbits the perimeter. The gold momentum
+   bolt made literal. ONE per viewport, dark surfaces only.
+   Wrap any element:  <div class="cop-beam cop-beam--gold"> … </div>
+   For pill CTAs/chips add cop-beam--pill.                            */
+@property --cop-beam-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+.cop-beam {
+  position: relative; border-radius: 16px; padding: 2px;
+  isolation: isolate; background: rgba(255,255,255,.06);
+  --cop-beam-c1: var(--c-gold-warm); --cop-beam-c2: var(--c-gold);
+}
+.cop-beam--blue { --cop-beam-c1: var(--c-azure); --cop-beam-c2: var(--c-sky); }
+.cop-beam--pill { border-radius: 999px; }
+.cop-beam::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px;
+  background: conic-gradient(from var(--cop-beam-angle),
+    transparent 0deg, transparent 250deg,
+    var(--cop-beam-c1) 320deg, var(--cop-beam-c2) 340deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  animation: cop-beam-rotate 4s linear infinite; z-index: 0;
+}
+.cop-beam--fast::before { animation-duration: 2.4s; }
+.cop-beam__inner {
+  position: relative; z-index: 1; border-radius: 14px; height: 100%; box-sizing: border-box;
+  background: linear-gradient(165deg, #10234A 0%, #0A0F22 100%);
+}
+.cop-beam--pill .cop-beam__inner { border-radius: 999px; }
+@keyframes cop-beam-rotate { to { --cop-beam-angle: 360deg; } }
+@supports not (background: conic-gradient(from 0deg, red, red)) {
+  .cop-beam::before { background: none; animation: cop-beam-pulse 2.4s ease-in-out infinite; box-shadow: var(--glow-gold); }
+  @keyframes cop-beam-pulse { 50% { opacity: .4; } }
+}
+
+/* ---- Reduced motion --------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .cop-btn, .cop-card, .cop-pillar { transition: none; }
+  .cop-btn:hover, .cop-card--hover:hover, .cop-pillar:hover { transform: none; }
+  .cop-beam::before { animation: none; }
+}

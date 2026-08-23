@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutrals" subtitle="Cool, navy-tinted gray ramp" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); }
+  .ramp { display: flex; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle); }
+  .ramp div { flex: 1; height: 60px; }
+  .labels { display: flex; margin-top: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+  .labels div { flex: 1; text-align: center; }
+  .labels b { display: block; font-weight: 500; font-size: 8px; letter-spacing: -.02em; color: var(--text-muted); margin-top: 3px; }
+</style>
+</head>
+<body>
+  <div class="ramp">
+    <div style="background:var(--n-0)"></div><div style="background:var(--n-25)"></div>
+    <div style="background:var(--n-50)"></div><div style="background:var(--n-100)"></div>
+    <div style="background:var(--n-200)"></div><div style="background:var(--n-300)"></div>
+    <div style="background:var(--n-400)"></div><div style="background:var(--n-500)"></div>
+    <div style="background:var(--n-600)"></div><div style="background:var(--n-700)"></div>
+    <div style="background:var(--n-800)"></div><div style="background:var(--n-900)"></div>
+    <div style="background:var(--n-950)"></div>
+  </div>
+  <div class="labels">
+    <div>0<b>FFFFFF</b></div><div>25<b>F7F9FC</b></div><div>50<b>EEF2F8</b></div><div>100<b>E2E8F2</b></div><div>200<b>C9D3E2</b></div><div>300<b>A6B3C7</b></div><div>400<b>7C8AA1</b></div><div>500<b>5A687E</b></div><div>600<b>404C61</b></div><div>700<b>2A3447</b></div><div>800<b>182032</b></div><div>900<b>0D1424</b></div><div>950<b>070C18</b></div>
+  </div>
+</body>
+</html>

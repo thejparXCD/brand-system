@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social Banners" description="Channel headers at true pixel size — YouTube, LinkedIn (personal + company), Facebook, X, Instagram and TikTok profile cards — with safe zones" -->
+<helmet>
+<style>
+  html, body { margin: 0; padding: 0; background: #EDEFF4; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+  .bn-lt .bn-bg { background: #FAF6EE !important; }
+  .bn-lt .bn-title { color: #0D1424 !important; }
+  .bn-lt .bn-sub { color: #3D4A5C !important; }
+  .bn-lt .bn-meta { color: #7A8698 !important; }
+  .bn-lt .cop-lightfield { background-color: transparent !important; opacity: 0.55 !important; }
+  /* Tall canvases: crop the spires so they read as a base glow, not full-height columns */
+  .bn-tall .cop-lightfield, .bn-tall .cop-lf-plate { top: auto; bottom: 0; height: 40%; }
+  .cop-lf-plate { background-position: center bottom; }
+  .cop-lf-plate { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); }
+  .bn-tall .cop-lf--spotlight { top: 0; bottom: auto; height: 30%; }
+</style>
+<script src="./ds-base.js"></script>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;background:#EDEFF4;color:#2A3447;padding:56px 40px 96px;">
+<div style="max-width:1180px;margin:0 auto;display:grid;gap:44px;">
+
+  <header data-screen-label="Spec Header">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#2896D2;margin-bottom:12px;">Celebration OnPoint · social system</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:42px;line-height:1.1;letter-spacing:-0.02em;color:#0D1424;margin:0 0 12px;">Channel banners</h1>
+    <p style="font-size:16px;line-height:1.65;color:#5A687E;margin:0;max-width:720px;">Every header built on the same three-part lockup — name, role line, one proof line — over dark ink with a low Light Fields glow. Each is authored at native pixel size and shown scaled to fit. Gold rule always sits under the name.</p>
+  </header>
+
+  <!-- YOUTUBE -->
+  <section data-screen-label="YouTube">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#0D1424;margin:0;">YouTube channel art</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">2560 × 1440 · TV-safe 1546 × 423</span>
+    </div>
+    <div style="width:1100px;height:619px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+      <div style="position:absolute;top:0;left:0;width:2560px;height:1440px;transform:scale(0.4297);transform-origin:top left;">
+        <div class="bn-bg" style="position:relative;width:2560px;height:1440px;background:#0A0814;overflow:hidden;">
+          <div class="cop-lf-plate cop-lf-plate--pillars-bluegold" aria-hidden="true"></div>
+          <!-- safe zone guides -->
+          <div style="position:absolute;top:508px;left:507px;width:1546px;height:423px;border:2px dashed rgba(245,197,24,0.55);"></div>
+          <div style="position:absolute;top:462px;left:507px;font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,197,24,0.85);">safe on every device — keep all text inside</div>
+          <!-- lockup, centered in safe zone -->
+          <div style="position:absolute;top:508px;left:507px;width:1546px;height:423px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:24px;">
+            <div class="bn-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:132px;line-height:1;letter-spacing:-0.03em;color:#fff;">Celebration OnPoint</div>
+            <div style="width:220px;height:6px;background:#F5C518;"></div>
+            <div class="bn-sub" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:46px;letter-spacing:0.02em;color:rgba(255,255,255,0.78);">Message · Machines · Mission</div>
+            <div class="bn-meta" style="font-family:'IBM Plex Mono',monospace;font-size:32px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Turning limits into growth advantage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKEDIN PERSONAL -->
+  <section data-screen-label="LinkedIn Personal">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#0D1424;margin:0;">LinkedIn — personal cover</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">1584 × 396 · avatar covers lower left</span>
+    </div>
+    <div style="width:1100px;height:275px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+      <div style="position:absolute;top:0;left:0;width:1584px;height:396px;transform:scale(0.6944);transform-origin:top left;">
+        <div class="bn-bg" style="position:relative;width:1584px;height:396px;background:#0A0814;overflow:hidden;">
+          <div class="cop-lf-plate cop-lf-plate--horizon" aria-hidden="true"></div>
+          <div style="position:absolute;top:0;left:0;width:400px;height:396px;border-right:2px dashed rgba(245,197,24,0.35);"></div>
+          <div style="position:absolute;left:440px;top:0;bottom:0;right:80px;display:flex;flex-direction:column;justify-content:center;gap:16px;">
+            <div class="bn-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:76px;line-height:1;letter-spacing:-0.03em;color:#fff;">Celebration OnPoint</div>
+            <div style="width:160px;height:5px;background:#F5C518;"></div>
+            <div class="bn-sub" style="font-size:32px;line-height:1.4;color:rgba(255,255,255,0.74);max-width:900px;">Growth enablement, technology, and mission readiness for organizations that cannot wait for perfect conditions.</div>
+          </div>
+          <div class="bn-meta" style="position:absolute;right:80px;bottom:36px;font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);">onpointhq.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKEDIN COMPANY -->
+  <section data-screen-label="LinkedIn Company">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#0D1424;margin:0;">LinkedIn — company page</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">1128 × 191 · light variant</span>
+    </div>
+    <div class="bn-lt" style="width:1100px;height:186px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+      <div style="position:absolute;top:0;left:0;width:1128px;height:191px;transform:scale(0.9752);transform-origin:top left;">
+        <div class="bn-bg" style="position:relative;width:1128px;height:191px;background:#0A0814;overflow:hidden;">
+          <div class="cop-lightfield cop-lf--aurora" aria-hidden="true"></div>
+          <div style="position:absolute;left:56px;top:0;bottom:0;display:flex;align-items:center;gap:24px;">
+            <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:28px;color:#F5C518;">C</div>
+            <div>
+              <div class="bn-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-0.02em;color:#fff;">Celebration OnPoint</div>
+              <div class="bn-sub" style="font-size:20px;color:rgba(255,255,255,0.7);margin-top:4px;">Message · Machines · Mission</div>
+            </div>
+          </div>
+          <div class="bn-meta" style="position:absolute;right:56px;top:0;bottom:0;display:flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);">onpointhq.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACEBOOK -->
+  <section data-screen-label="Facebook">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#0D1424;margin:0;">Facebook page cover</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">1640 × 664 · mobile crops to center 1080</span>
+    </div>
+    <div style="width:1100px;height:445px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+      <div style="position:absolute;top:0;left:0;width:1640px;height:664px;transform:scale(0.6707);transform-origin:top left;">
+        <div class="bn-bg" style="position:relative;width:1640px;height:664px;background:#0A0814;overflow:hidden;">
+          <div class="cop-lf-plate cop-lf-plate--pillars-bluegold" aria-hidden="true"></div>
+          
+          <div style="position:absolute;left:280px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:20px;max-width:760px;">
+            <div class="bn-meta" style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.18em;text-transform:uppercase;color:#F5C518;">Advisory · Enablement · Technology</div>
+            <div class="bn-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:92px;line-height:1;letter-spacing:-0.03em;color:#fff;">Celebration OnPoint</div>
+            <div style="width:180px;height:6px;background:#F5C518;"></div>
+            <div class="bn-sub" style="font-size:34px;line-height:1.4;color:rgba(255,255,255,0.74);">Turning limits into growth advantage.</div>
+          </div>
+          <div style="position:absolute;left:280px;right:280px;top:0;bottom:0;border-left:2px dashed rgba(40,150,210,0.35);border-right:2px dashed rgba(40,150,210,0.35);pointer-events:none;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- X -->
+  <section data-screen-label="X">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#0D1424;margin:0;">X header</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">1500 × 500 · avatar overlaps lower left</span>
+    </div>
+    <div style="width:1100px;height:367px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+      <div style="position:absolute;top:0;left:0;width:1500px;height:500px;transform:scale(0.7333);transform-origin:top left;">
+        <div class="bn-bg" style="position:relative;width:1500px;height:500px;background:#0A0814;overflow:hidden;">
+          <div class="cop-lf-plate cop-lf-plate--horizon" aria-hidden="true"></div>
+          <div style="position:absolute;left:60px;bottom:-60px;width:260px;height:260px;border-radius:50%;border:2px dashed rgba(245,197,24,0.4);"></div>
+          <div style="position:absolute;right:90px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;gap:16px;">
+            <div class="bn-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:84px;line-height:1;letter-spacing:-0.03em;color:#fff;">Celebration OnPoint</div>
+            <div style="width:150px;height:5px;background:#F5C518;"></div>
+            <div class="bn-sub" style="font-size:30px;line-height:1.4;color:rgba(255,255,255,0.72);max-width:720px;">Field notes on growth, technology, and mission readiness.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM + TIKTOK -->
+  <section data-screen-label="Instagram + TikTok">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#0D1424;margin:0;">Instagram &amp; TikTok</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">no cover art — pinned profile cards instead</span>
+    </div>
+    <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- IG pinned card 1080x1350 -->
+      <div>
+        <div style="width:378px;height:472px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+          <div style="position:absolute;top:0;left:0;width:1080px;height:1350px;transform:scale(0.35);transform-origin:top left;">
+            <div class="bn-bg bn-tall" style="position:relative;width:1080px;height:1350px;background:#0A0814;overflow:hidden;">
+              <div class="cop-lf-plate cop-lf-plate--rays-bluegold" aria-hidden="true"></div>
+              <div style="position:absolute;inset:0;padding:96px 84px;display:flex;flex-direction:column;">
+                <div class="bn-meta" style="font-family:'IBM Plex Mono',monospace;font-size:28px;letter-spacing:0.18em;text-transform:uppercase;color:#F5C518;">Pinned · start here</div>
+                <div class="bn-title" style="margin-top:36px;font-family:'Poppins',sans-serif;font-weight:700;font-size:96px;line-height:1.0;letter-spacing:-0.03em;color:#fff;">Celebration OnPoint</div>
+                <div style="margin-top:28px;width:170px;height:6px;background:#F5C518;"></div>
+                <div class="bn-sub" style="margin-top:32px;font-size:42px;line-height:1.4;color:rgba(255,255,255,0.74);">Growth &amp; Workforce · Technology &amp; Infrastructure · Mission Readiness</div>
+                <div style="margin-top:auto;margin-bottom:56px;align-self:center;width:300px;height:300px;border-radius:68px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;color:#F5C518;">C</div>
+                <div class="bn-meta" style="font-family:'IBM Plex Mono',monospace;font-size:28px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.55);">onpointhq.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Instagram pinned · 1080 × 1350</div>
+      </div>
+
+      <!-- TikTok profile card 1080x1920 -->
+      <div>
+        <div style="width:302px;height:538px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+          <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.28);transform-origin:top left;">
+            <div class="bn-bg bn-tall" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+              <div class="cop-lf-plate cop-lf-plate--pillars-bluegold" aria-hidden="true"></div>
+              <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;justify-content:center;gap:32px;">
+                <div class="bn-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:#F5C518;">Video cover</div>
+                <div class="bn-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:118px;line-height:0.98;letter-spacing:-0.035em;color:#fff;">Limits into advantage.</div>
+                <div style="width:190px;height:6px;background:#F5C518;"></div>
+                <div class="bn-sub" style="font-size:46px;line-height:1.4;color:rgba(255,255,255,0.72);">60-second field notes for leaders.</div>
+              </div>
+              <div class="bn-meta" style="position:absolute;left:72px;bottom:500px;font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">TikTok cover · 1080 × 1920</div>
+      </div>
+
+      <!-- Avatar set -->
+      <div>
+        <div style="display:grid;gap:16px;">
+          <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;position:relative;box-shadow:0 8px 20px rgba(13,20,36,0.16);display:flex;align-items:center;justify-content:center;background:#0A0814;"><div class="cop-lf-plate cop-lf-plate--burst-gold" aria-hidden="true"></div><span style="position:relative;font-family:'Poppins',sans-serif;font-weight:700;font-size:74px;color:#F5C518;">C</span></div>
+          <div style="width:150px;height:150px;border-radius:34px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:74px;color:#F5C518;box-shadow:0 8px 20px rgba(13,20,36,0.16);">C</div>
+        </div>
+        <div style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Avatars · 800 × 800</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section data-screen-label="Rules" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Respect the crop</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Dashed guides mark where avatars sit and where mobile clips. Nothing that must be read goes near them.</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Name, rule, one line</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Every banner carries the same three-part lockup. Nothing else earns space at header scale.</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Dark by default</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Light is for the company page and any surface that sits against a white platform chrome.</div></div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180}}"></script>
+</body>
+</html>

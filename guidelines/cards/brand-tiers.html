@@ -1,0 +1,41 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Brand Tier System" subtitle="Tier 1 Momentum (primary) · Tier 2 Precision Authority (selective)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: 22px; min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-md); }
+  .glow { position: absolute; top: -60px; right: -40px; width: 220px; height: 220px; border-radius: 50%; background: var(--grad-mission); opacity: 0.3; filter: blur(30px); pointer-events: none; }
+  .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; }
+  h4 { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin: 10px 0 6px; color: #fff; letter-spacing: -0.01em; }
+  p { font-size: 12.5px; line-height: 1.5; margin: 0; }
+  .rule { height: 3px; width: 34px; border-radius: 2px; background: var(--grad-bolt); }
+</style>
+</head>
+<body>
+  <div class="panel cop-tier-momentum">
+    <div class="glow"></div>
+    <div style="position:relative">
+      <span class="tag" style="color:var(--c-gold)">Tier 1 · Primary</span>
+      <h4>OnPoint Momentum</h4>
+      <p style="color:rgba(255,255,255,0.66)">Default identity — engagement, growth, training, marketing. Tone: calm authority with forward motion.</p>
+    </div>
+    <div class="rule" style="position:relative"></div>
+  </div>
+
+  <div class="panel cop-tier-authority cop-grid-overlay">
+    <div style="position:relative">
+      <span class="tag" style="color:var(--c-sky)">Tier 2 · Selective</span>
+      <h4>Precision Authority</h4>
+      <p style="color:rgba(255,255,255,0.66)">High-trust contexts — Federal, cybersecurity, AI infrastructure. Tone: structured, controlled, high-contrast, precise grid.</p>
+    </div>
+    <div style="position:relative;display:flex;gap:6px">
+      <span style="width:8px;height:8px;background:var(--c-sky);border-radius:1px"></span>
+      <span style="width:8px;height:8px;border:1px solid var(--c-sky);border-radius:1px"></span>
+      <span style="width:8px;height:8px;background:var(--c-gold);border-radius:1px"></span>
+    </div>
+  </div>
+</body>
+</html>

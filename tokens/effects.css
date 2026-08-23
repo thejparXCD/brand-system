@@ -1,0 +1,28 @@
+/* Celebration OnPoint — Effects: shadows, motion, focus
+   --------------------------------------------------------------- */
+
+:root {
+  /* ---- Elevation (cool navy-tinted shadows, never pure black) -- */
+  --shadow-xs:  0 1px 2px rgba(8, 30, 66, 0.06);
+  --shadow-sm:  0 1px 3px rgba(8, 30, 66, 0.08), 0 1px 2px rgba(8, 30, 66, 0.06);
+  --shadow-md:  0 4px 12px rgba(8, 30, 66, 0.10), 0 2px 4px rgba(8, 30, 66, 0.06);
+  --shadow-lg:  0 12px 28px rgba(8, 30, 66, 0.14), 0 4px 8px rgba(8, 30, 66, 0.08);
+  --shadow-xl:  0 24px 56px rgba(8, 30, 66, 0.20), 0 8px 16px rgba(8, 30, 66, 0.10);
+
+  /* Brand glows — used sparingly on dark surfaces / CTAs */
+  --glow-gold: 0 0 0 1px rgba(245, 197, 24, 0.4), 0 8px 28px rgba(245, 197, 24, 0.28);
+  --glow-blue: 0 8px 28px rgba(40, 150, 210, 0.32);
+
+  /* Focus ring */
+  --ring: 0 0 0 3px rgba(40, 150, 210, 0.35);
+  --ring-gold: 0 0 0 3px rgba(245, 197, 24, 0.40);
+
+  /* ---- Motion -------------------------------------------------- */
+  /* Confident, slightly snappy. Ease-out for entrances, no bounce. */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   360ms; /* @kind other */
+  --transition: all var(--dur-base) var(--ease-out); /* @kind other */
+}

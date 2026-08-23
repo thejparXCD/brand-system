@@ -1,0 +1,44 @@
+/* Celebration OnPoint — Typography
+   ---------------------------------------------------------------
+   Poppins (display) · Open Sans (body/UI) · IBM Plex Mono (labels/data)
+*/
+
+:root {
+  /* ---- Families ------------------------------------------------ */
+  --font-display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body:    'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ---- Weights ------------------------------------------------- */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* ---- Type scale (1.250 major-third, 16px base) --------------- */
+  --fs-display: 4.209rem;  /* 67px — hero                          */
+  --fs-h1:      3.157rem;  /* 50px                                 */
+  --fs-h2:      2.369rem;  /* 38px                                 */
+  --fs-h3:      1.777rem;  /* 28px                                 */
+  --fs-h4:      1.333rem;  /* 21px                                 */
+  --fs-lg:      1.125rem;  /* 18px — lead body                     */
+  --fs-base:    1rem;      /* 16px                                 */
+  --fs-sm:      0.875rem;  /* 14px                                 */
+  --fs-xs:      0.75rem;   /* 12px — eyebrows, captions            */
+
+  /* ---- Line heights -------------------------------------------- */
+  --lh-tight:   1.05; /* @kind font */
+  --lh-snug:    1.2;  /* @kind font */
+  --lh-normal:  1.5;  /* @kind font */
+  --lh-relaxed: 1.65; /* @kind font */
+
+  /* ---- Letter spacing ------------------------------------------ */
+  --ls-tight:   -0.02em;   /* @kind font */
+  --ls-normal:  0;         /* @kind font */
+  --ls-wide:    0.08em;    /* @kind font */
+  --ls-caps:    0.14em;    /* @kind font */
+
+  /* ---- Semantic roles ------------------------------------------ */
+  --text-display-font: var(--font-display);
+  --text-eyebrow-font: var(--font-mono);
+}

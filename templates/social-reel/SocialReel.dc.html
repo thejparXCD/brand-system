@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social Reel Frames" description="1080×1920 vertical reel/carousel frame system — anatomy spec, safe areas, and a worked example set in light and dark" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #EDEFF4; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+  .lt .rf-bg { background: #FAF6EE !important; }
+  .lt .rf-title { color: #0D1424 !important; }
+  .lt .rf-body { color: #3D4A5C !important; }
+  .lt .rf-meta { color: #7A8698 !important; }
+  .lt .rf-rule { background: rgba(13,20,36,0.12) !important; }
+  .lt .rf-card { background: #FFFFFF !important; border-color: rgba(13,20,36,0.08) !important; }
+  .lt .rf-chipline { color: #0D1424 !important; }
+  .lt .cop-lightfield { background-color: transparent !important; opacity: 0.55 !important; }
+  /* Vertical crop: beams read as a short glow at the base, not full-height columns */
+  .rf-bg .cop-lightfield, .rf-bg .cop-lf-plate { top: auto !important; bottom: 0 !important; height: 44% !important; opacity: 0.85; }
+  .rf-bg .cop-lf-plate { background-position: center bottom; }
+  .cop-lf-plate { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); }
+  .rf-bg .cop-lf--spotlight { top: 0 !important; bottom: auto !important; height: 34% !important; }
+  .lt .rf-bg .cop-lightfield { background-color: transparent !important; opacity: 0.55 !important; }
+</style>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;background:#EDEFF4;color:#2A3447;padding:56px 40px 88px;">
+<div style="max-width:1240px;margin:0 auto;">
+
+  <!-- DOC HEADER -->
+  <header data-screen-label="Spec Header" style="margin-bottom:44px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#2896D2;margin-bottom:12px;">Celebration OnPoint · social system</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:42px;line-height:1.1;letter-spacing:-0.02em;color:#0D1424;margin:0 0 12px;">Reel &amp; carousel frames</h1>
+    <p style="font-size:16px;line-height:1.65;color:#5A687E;margin:0;max-width:680px;">One 1080 × 1920 frame system for every platform — Reels, Shorts, TikTok, LinkedIn video, and swipe carousels. Same grid, same type ramp, two surfaces. Frames below are shown at 35%.</p>
+  </header>
+
+  <!-- SPEC STRIP -->
+  <section data-screen-label="Specs" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;">
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Canvas</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#0D1424;">1080 × 1920</div><div style="font-size:13px;color:#5A687E;">9:16 · 72 px side margin</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Safe area</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#0D1424;">220 top · 480 bottom</div><div style="font-size:13px;color:#5A687E;">Nothing critical outside it</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Type ramp</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#0D1424;">120 / 46 / 34</div><div style="font-size:13px;color:#5A687E;">Poppins · Open Sans · Plex Mono</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Accent</div><div style="display:flex;gap:8px;align-items:center;"><span style="width:26px;height:26px;border-radius:7px;background:#F5C518;"></span><span style="width:26px;height:26px;border-radius:7px;background:#F9A02A;"></span><span style="width:26px;height:26px;border-radius:7px;background:#2896D2;"></span></div><div style="font-size:13px;color:#5A687E;">One accent per set</div></div>
+  </section>
+
+  <!-- BASE / ANATOMY -->
+  <section data-screen-label="Anatomy" style="margin-bottom:56px;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:20px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:#0D1424;margin:0;">The base frame</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">anatomy · empty · light</span>
+    </div>
+    <div style="display:grid;grid-template-columns:378px 378px minmax(0,1fr);gap:28px;align-items:start;">
+
+      <!-- Anatomy frame (dark) -->
+      <div style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--whispy" aria-hidden="true"></div>
+            <!-- safe-area guides -->
+            <div style="position:absolute;inset:0;pointer-events:none;">
+              <div style="position:absolute;top:0;left:0;right:0;height:220px;background:rgba(245,197,24,0.10);border-bottom:2px dashed rgba(245,197,24,0.5);"></div>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:480px;background:rgba(245,197,24,0.10);border-top:2px dashed rgba(245,197,24,0.5);"></div>
+              <div style="position:absolute;top:0;bottom:0;left:0;width:72px;background:rgba(40,150,210,0.14);"></div>
+              <div style="position:absolute;top:0;bottom:0;right:0;width:72px;background:rgba(40,150,210,0.14);"></div>
+              <div style="position:absolute;top:240px;left:96px;font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,197,24,0.9);">↑ 220 px platform chrome</div>
+              <div style="position:absolute;bottom:500px;left:96px;font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,197,24,0.9);">↓ 480 px caption &amp; actions</div>
+            </div>
+            <!-- content zones -->
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">series label</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:64px;display:flex;align-items:center;gap:22px;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:64px;padding:0 18px;border-radius:14px;background:#F5C518;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:32px;color:#0A0814;">01</span>
+                <span class="rf-chipline" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;">kicker / section</span>
+              </div>
+              <div class="rf-title" style="margin-top:36px;font-family:'Poppins',sans-serif;font-weight:700;font-size:120px;line-height:0.98;letter-spacing:-0.03em;color:#fff;">Headline<br />zone</div>
+              <div class="rf-body" style="margin-top:32px;font-size:46px;line-height:1.45;color:rgba(255,255,255,0.68);max-width:840px;">Support line — one or two sentences, 46 px, never more than three lines.</div>
+              <div class="rf-card" style="margin-top:auto;height:520px;border-radius:28px;background:rgba(255,255,255,0.05);border:2px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:32px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);">media zone</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;padding-top:36px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@handle</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">1/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty frame (light) -->
+      <div class="lt" style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">series label</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:64px;display:flex;align-items:center;gap:22px;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:64px;padding:0 18px;border-radius:14px;background:#F5C518;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:32px;color:#0A0814;">01</span>
+                <span class="rf-chipline" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;">kicker / section</span>
+              </div>
+              <div class="rf-title" style="margin-top:36px;font-family:'Poppins',sans-serif;font-weight:700;font-size:120px;line-height:0.98;letter-spacing:-0.03em;color:#fff;">Headline<br />zone</div>
+              <div class="rf-body" style="margin-top:32px;font-size:46px;line-height:1.45;color:rgba(255,255,255,0.68);max-width:840px;">Same frame, light surface. Use for proof, data, and screenshot-led frames.</div>
+              <div class="rf-card" style="margin-top:auto;height:520px;border-radius:28px;background:rgba(255,255,255,0.05);border:2px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:32px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);">media zone</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;padding-top:36px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@handle</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">2/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rules -->
+      <div style="display:grid;gap:14px;align-content:start;">
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Hook lives in the first 900 px</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Kicker, headline, and support line all sit above the media zone so the frame reads before anyone taps.</div></div>
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Three lines maximum</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Headline at 120 px caps out around five words. If it runs long, cut the sentence, not the size.</div></div>
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">One accent per set</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Gold for brand, blue for MACHINES, amber for MESSAGE. Never two accents in one carousel.</div></div>
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Alternate surfaces</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Open and close dark, go light for the proof and detail frames. The switch gives the swipe rhythm.</div></div>
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Persistent furniture</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Series label and brand tile top, handle and counter bottom — identical position on every frame.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLE SET -->
+  <section data-screen-label="Example Set">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:20px;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;color:#0D1424;margin:0;">Worked example — six frames</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8492A6;">celebration onpoint · dark → light → dark</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,378px);gap:28px;justify-content:start;">
+
+      <!-- 1. HOOK (dark) -->
+      <div style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--whispy cop-lf--alive" aria-hidden="true"></div>
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint — 01</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div class="rf-title" style="margin-top:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:132px;line-height:0.96;letter-spacing:-0.035em;color:#fff;">Stop waiting for perfect <span style="color:#F5C518;">conditions.</span></div>
+              <div class="rf-body" style="margin-top:44px;font-size:48px;line-height:1.4;color:rgba(255,255,255,0.68);max-width:860px;">They are not coming. Here is what to build instead.</div>
+              <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">1/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. POINT (dark) -->
+      <div style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--pillars-bluegold" aria-hidden="true"></div>
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint — 02</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:72px;display:flex;align-items:center;gap:22px;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:64px;padding:0 18px;border-radius:14px;background:#F5C518;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:32px;color:#0A0814;">02</span>
+                <span class="rf-chipline" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;">The premise</span>
+              </div>
+              <div class="rf-title" style="margin-top:40px;font-family:'Poppins',sans-serif;font-weight:700;font-size:112px;line-height:1.0;letter-spacing:-0.03em;color:#fff;">Constraint is a forcing function.</div>
+              <div class="rf-body" style="margin-top:36px;font-size:46px;line-height:1.45;color:rgba(255,255,255,0.68);">A resourced team runs ten mediocre plays. A constrained team runs one great one.</div>
+              <div class="rf-rule" style="margin-top:56px;height:4px;width:220px;background:rgba(255,255,255,0.2);"></div>
+              <div class="rf-body" style="margin-top:40px;font-size:44px;line-height:1.45;color:rgba(255,255,255,0.68);">That is not a consolation prize. That is asymmetry.</div>
+              <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">2/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. LIST (light) -->
+      <div class="lt" style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint — 03</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:72px;display:flex;align-items:center;gap:22px;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:64px;padding:0 18px;border-radius:14px;background:#F9A02A;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:32px;color:#0A0814;">03</span>
+                <span class="rf-chipline" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;">Three moves</span>
+              </div>
+              <div class="rf-title" style="margin-top:40px;font-family:'Poppins',sans-serif;font-weight:700;font-size:104px;line-height:1.0;letter-spacing:-0.03em;color:#fff;">Do this before Friday.</div>
+              <div style="margin-top:60px;display:grid;gap:34px;">
+                <div style="display:flex;gap:28px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:44px;color:#F9A02A;line-height:1.2;">01</span><div><div class="rf-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:48px;color:#fff;line-height:1.2;">Name the constraint</div><div class="rf-body" style="font-size:40px;line-height:1.4;color:rgba(255,255,255,0.66);margin-top:8px;">Out loud, in writing, with the team.</div></div></div>
+                <div style="display:flex;gap:28px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:44px;color:#F9A02A;line-height:1.2;">02</span><div><div class="rf-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:48px;color:#fff;line-height:1.2;">Ask what it forces</div><div class="rf-body" style="font-size:40px;line-height:1.4;color:rgba(255,255,255,0.66);margin-top:8px;">Then be unignorable at that one thing.</div></div></div>
+                <div style="display:flex;gap:28px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:44px;color:#F9A02A;line-height:1.2;">03</span><div><div class="rf-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:48px;color:#fff;line-height:1.2;">Kill one initiative</div><div class="rf-body" style="font-size:40px;line-height:1.4;color:rgba(255,255,255,0.66);margin-top:8px;">Free the energy your best play needs.</div></div></div>
+              </div>
+              <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">3/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. PROOF / MEDIA (light) -->
+      <div class="lt" style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div>
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint — 04</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:64px;display:flex;align-items:center;gap:22px;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:64px;padding:0 18px;border-radius:14px;background:#2896D2;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:32px;color:#fff;">04</span>
+                <span class="rf-chipline" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;">In the room</span>
+              </div>
+              <div class="rf-title" style="margin-top:36px;font-family:'Poppins',sans-serif;font-weight:700;font-size:104px;line-height:1.0;letter-spacing:-0.03em;color:#fff;">Proof frame.</div>
+              <div class="rf-body" style="margin-top:28px;font-size:44px;line-height:1.4;color:rgba(255,255,255,0.68);">Screenshot, stage photo, or chart — drop it in the media zone.</div>
+              <div class="rf-card" style="margin-top:auto;height:700px;border-radius:28px;overflow:hidden;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="reel-proof-media" placeholder="stage photo or screenshot" hint-size="100%,700px"></x-import></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;padding-top:36px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">4/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. QUOTE (dark) -->
+      <div style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--whispy" aria-hidden="true"></div>
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint — 05</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:auto;margin-bottom:auto;">
+                <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:0.6;color:#F5C518;">"</div>
+                <div class="rf-title" style="margin-top:16px;font-family:'Poppins',sans-serif;font-weight:700;font-size:96px;line-height:1.12;letter-spacing:-0.025em;color:#fff;">You do not need perfect conditions to grow. You need to design advantage from the limits you already have.</div>
+                <div class="rf-meta" style="margin-top:44px;font-family:'IBM Plex Mono',monospace;font-size:32px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint</div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">5/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. CTA (dark, headshot) -->
+      <div style="width:378px;height:672px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.16);">
+        <div style="position:absolute;top:0;left:0;width:1080px;height:1920px;transform:scale(0.35);transform-origin:top left;">
+          <div class="rf-bg" style="position:relative;width:1080px;height:1920px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--pillars-bluegold cop-lf--alive" aria-hidden="true"></div>
+            
+            <div style="position:absolute;top:220px;left:72px;right:72px;bottom:480px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:40px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Celebration OnPoint — 06</div>
+                <div style="width:76px;height:76px;border-radius:20px;background:#F5C518;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;color:#0A0814;">C</div>
+              </div>
+              <div style="margin-top:auto;">
+                <div class="rf-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:110px;line-height:1.0;letter-spacing:-0.03em;color:#fff;">Put this to work.</div>
+                <div class="rf-body" style="margin-top:32px;font-size:46px;line-height:1.4;color:rgba(255,255,255,0.7);">Message, Machines, Mission — advisory that ships.</div>
+                <div style="margin-top:48px;display:inline-flex;align-items:center;gap:20px;background:#F5C518;color:#0A0814;font-family:'Poppins',sans-serif;font-weight:700;font-size:46px;padding:32px 52px;border-radius:24px;">Start a conversation →</div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:44px;padding-top:56px;">
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">@celebrationonpoint</div>
+                <div class="rf-meta" style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:rgba(255,255,255,0.55);">6/6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1360}}">
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

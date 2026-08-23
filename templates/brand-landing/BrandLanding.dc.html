@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Brand Landing" description="Celebration OnPoint hero + three M's + CTA, on the ink ground" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  body { margin: 0; background: #0A0814; font-family: 'Open Sans', system-ui, sans-serif; }
+</style>
+</helmet>
+<div style="position:relative;overflow:hidden;background:#0A0814;color:#fff;">
+  <div style="position:absolute;top:-180px;right:-120px;width:620px;height:620px;background:linear-gradient(155deg,#081E42 0%,#2896D2 100%);opacity:0.22;filter:blur(40px);border-radius:50%;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-200px;left:-140px;width:520px;height:520px;background:linear-gradient(120deg,#F5C518 0%,#F9A02A 100%);opacity:0.10;filter:blur(50px);border-radius:50%;pointer-events:none;"></div>
+
+  <div style="position:relative;max-width:1100px;margin:0 auto;padding:88px 28px 64px;text-align:center;">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(245,197,24,0.12);border:1px solid rgba(245,197,24,0.3);margin-bottom:26px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#F5C518;">Asymmetric advantage</span>
+    </div>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:60px;line-height:1.08;letter-spacing:-0.02em;color:#fff;margin:0 auto 22px;max-width:840px;">Turn hidden reality into <span style="background:linear-gradient(120deg,#F5C518,#F9A02A);-webkit-background-clip:text;background-clip:text;color:transparent;">visible momentum.</span></h1>
+    <p style="font-size:19px;line-height:1.6;color:rgba(255,255,255,0.66);max-width:600px;margin:0 auto 34px;">We unify Message, Machines, and Mission so your organization can see more, sell more, and operate smarter.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <x-import component-from-global-scope="CelebrationOnPointDesignSystem_2fb49a.Button" variant="primary" size="lg" hint-size="200px,52px">See what you're missing</x-import>
+      <x-import component-from-global-scope="CelebrationOnPointDesignSystem_2fb49a.Button" variant="outline" size="lg" hint-size="160px,52px">Learn how</x-import>
+    </div>
+  </div>
+
+  <div style="position:relative;max-width:1100px;margin:0 auto;padding:0 28px 96px;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <x-import component-from-global-scope="CelebrationOnPointDesignSystem_2fb49a.PillarCard" theme="momentum" index="M1" eyebrow="What you say" title="Message" description="Align what you say — clear, consistent, and persuasive across every surface." hint-size="100%,260px"></x-import>
+      <x-import component-from-global-scope="CelebrationOnPointDesignSystem_2fb49a.PillarCard" theme="technology" index="M2" eyebrow="How you operate" title="Machines" description="Align how you operate — the systems, data, and automation that compound." hint-size="100%,260px"></x-import>
+      <x-import component-from-global-scope="CelebrationOnPointDesignSystem_2fb49a.PillarCard" theme="mission" index="M3" eyebrow="Why you exist" title="Mission" description="Align why you exist — a purpose that gives every move direction." hint-size="100%,260px"></x-import>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

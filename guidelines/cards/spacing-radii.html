@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Corner Radii" subtitle="Squircle family echoing the logo C" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 22px 24px; background: var(--surface-card); display: flex; gap: 18px; align-items: flex-end; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { width: 72px; height: 72px; background: var(--surface-sunken); border: 1.5px solid var(--border-default); }
+  .item b { font-family: var(--font-mono); font-size: 11px; color: var(--text-strong); }
+  .item span { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="item"><div class="box" style="border-radius:var(--radius-xs)"></div><b>xs</b><span>4</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-sm)"></div><b>sm</b><span>6</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-md)"></div><b>md</b><span>10</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-lg)"></div><b>lg</b><span>16</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-xl)"></div><b>xl</b><span>24</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-2xl)"></div><b>2xl</b><span>32</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--radius-pill)"></div><b>pill</b><span>999</span></div>
+</body>
+</html>

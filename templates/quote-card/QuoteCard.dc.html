@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Quote Cards" description="1200×1200 social quote cards — signature bracket frame, gold quote marks, dark and light surfaces, blank bases and worked examples" -->
+<helmet>
+<style>
+  html, body { margin: 0; padding: 0; background: #EDEFF4; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+  .qc-lt .qc-bg { background: #FAF6EE !important; }
+  .qc-lt .qc-quote { color: #0D1424 !important; }
+  .qc-lt .qc-attr { color: #5A687E !important; }
+  .qc-lt .qc-name { color: #0D1424 !important; }
+  .qc-lt .qc-rule-ink { border-color: #0D1424 !important; }
+  .qc-lt .cop-lightfield { background-color: transparent !important; opacity: 0.6 !important; }
+  .qc-bg .cop-lightfield, .qc-bg .cop-lf-plate { opacity: 0.9; top: auto; bottom: 0; height: 46%; }
+  .qc-bg .cop-lf-plate { background-position: center bottom; }
+  .cop-lf-plate { -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); }
+  .qc-bg .cop-lf--spotlight { top: 0; bottom: auto; height: 34%; }
+</style>
+<script src="./ds-base.js"></script>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;background:#EDEFF4;color:#2A3447;padding:56px 40px 88px;">
+<div style="max-width:1180px;margin:0 auto;">
+
+  <header data-screen-label="Spec Header" style="margin-bottom:40px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#2896D2;margin-bottom:12px;">Celebration OnPoint · social system</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:42px;line-height:1.1;letter-spacing:-0.02em;color:#0D1424;margin:0 0 12px;">Quote cards</h1>
+    <p style="font-size:16px;line-height:1.65;color:#5A687E;margin:0;max-width:700px;">1200 × 1200 square, built on the bracket device: a white rule entering from the left and turning down, a gold rule turning out to the right, gold quote marks marking the opening and close. Shown at 42%.</p>
+  </header>
+
+  <section data-screen-label="Specs" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:44px;">
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Canvas</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#0D1424;">1200 × 1200</div><div style="font-size:13px;color:#5A687E;">1:1 · crops safely to 4:5</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Quote</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#0D1424;">62 px · 3 lines</div><div style="font-size:13px;color:#5A687E;">Poppins Bold, centered</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Bracket</div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#0D1424;">3 px · r 48</div><div style="font-size:13px;color:#5A687E;">White in, gold out</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px;display:grid;gap:6px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Signature</div><div style="display:flex;gap:8px;align-items:center;"><span style="width:26px;height:26px;border-radius:7px;background:#F5C518;"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A0814;"></span><span style="width:26px;height:26px;border-radius:7px;background:#FAF6EE;border:1px solid #E2E8F2;"></span></div><div style="font-size:13px;color:#5A687E;">Gold marks on both surfaces</div></div>
+  </section>
+
+  <section data-screen-label="Cards" style="display:grid;grid-template-columns:repeat(2,504px);gap:32px;justify-content:start;">
+
+    <!-- DARK — WITH CONTENT -->
+    <div>
+      <div style="width:504px;height:504px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.18);">
+        <div style="position:absolute;top:0;left:0;width:1200px;height:1200px;transform:scale(0.42);transform-origin:top left;">
+          <div class="qc-bg" style="position:relative;width:1200px;height:1200px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--pillars-bluegold" aria-hidden="true"></div>
+            <!-- bracket: white rule in -->
+            <div class="qc-rule-ink" style="position:absolute;top:400px;left:0;right:140px;height:200px;border-top:3px solid #FFFFFF;border-right:3px solid #FFFFFF;border-top-right-radius:60px;"></div>
+            <!-- bracket: gold rule out -->
+            <div style="position:absolute;top:600px;left:160px;right:0;height:190px;border-left:3px solid #F5C518;border-bottom:3px solid #F5C518;border-bottom-left-radius:60px;"></div>
+            <!-- quote marks -->
+            <div style="position:absolute;top:430px;left:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;top:620px;right:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <!-- quote -->
+            <div style="position:absolute;top:470px;left:250px;right:250px;text-align:center;">
+              <div class="qc-quote" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:62px;line-height:1.22;letter-spacing:-0.01em;color:#fff;">You do not need perfect conditions to grow.</div>
+              <div class="qc-attr" style="margin-top:28px;font-family:'Poppins',sans-serif;font-style:italic;font-weight:600;font-size:34px;color:rgba(255,255,255,0.72);">— Celebration OnPoint</div>
+            </div>
+            <!-- byline -->
+            <div style="position:absolute;left:120px;bottom:96px;display:flex;align-items:center;gap:26px;">
+              <div style="width:86px;height:86px;border-radius:20px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:46px;color:#F5C518;">C</div>
+              <span class="qc-name" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:38px;color:#fff;">Celebration OnPoint</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Dark · with content</div>
+    </div>
+
+    <!-- LIGHT — WITH CONTENT -->
+    <div>
+      <div class="qc-lt" style="width:504px;height:504px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.18);">
+        <div style="position:absolute;top:0;left:0;width:1200px;height:1200px;transform:scale(0.42);transform-origin:top left;">
+          <div class="qc-bg" style="position:relative;width:1200px;height:1200px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+            <div class="qc-rule-ink" style="position:absolute;top:400px;left:0;right:140px;height:200px;border-top:3px solid #FFFFFF;border-right:3px solid #FFFFFF;border-top-right-radius:60px;"></div>
+            <div style="position:absolute;top:600px;left:160px;right:0;height:190px;border-left:3px solid #F5C518;border-bottom:3px solid #F5C518;border-bottom-left-radius:60px;"></div>
+            <div style="position:absolute;top:430px;left:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;top:620px;right:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;top:470px;left:250px;right:250px;text-align:center;">
+              <div class="qc-quote" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:62px;line-height:1.22;letter-spacing:-0.01em;color:#fff;">Constraint is not the obstacle. It is the strategy.</div>
+              <div class="qc-attr" style="margin-top:28px;font-family:'Poppins',sans-serif;font-style:italic;font-weight:600;font-size:34px;color:rgba(255,255,255,0.72);">— Celebration OnPoint</div>
+            </div>
+            <div style="position:absolute;left:120px;bottom:96px;display:flex;align-items:center;gap:26px;">
+              <div style="width:86px;height:86px;border-radius:20px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:46px;color:#F5C518;">C</div>
+              <span class="qc-name" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:38px;color:#fff;">Celebration OnPoint</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Light · with content</div>
+    </div>
+
+    <!-- DARK — BLANK BASE -->
+    <div>
+      <div style="width:504px;height:504px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.18);">
+        <div style="position:absolute;top:0;left:0;width:1200px;height:1200px;transform:scale(0.42);transform-origin:top left;">
+          <div class="qc-bg" style="position:relative;width:1200px;height:1200px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lf-plate cop-lf-plate--rays-bluegold" aria-hidden="true"></div>
+            <div class="qc-rule-ink" style="position:absolute;top:400px;left:0;right:140px;height:200px;border-top:3px solid #FFFFFF;border-right:3px solid #FFFFFF;border-top-right-radius:60px;"></div>
+            <div style="position:absolute;top:600px;left:160px;right:0;height:190px;border-left:3px solid #F5C518;border-bottom:3px solid #F5C518;border-bottom-left-radius:60px;"></div>
+            <div style="position:absolute;top:430px;left:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;top:620px;right:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;left:120px;bottom:96px;width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:52px;color:#F5C518;">C</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Dark · blank base (logo lockup)</div>
+    </div>
+
+    <!-- LIGHT — BLANK BASE -->
+    <div>
+      <div class="qc-lt" style="width:504px;height:504px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,20,36,0.18);">
+        <div style="position:absolute;top:0;left:0;width:1200px;height:1200px;transform:scale(0.42);transform-origin:top left;">
+          <div class="qc-bg" style="position:relative;width:1200px;height:1200px;background:#0A0814;overflow:hidden;">
+            <div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div>
+            <div class="qc-rule-ink" style="position:absolute;top:400px;left:0;right:140px;height:200px;border-top:3px solid #FFFFFF;border-right:3px solid #FFFFFF;border-top-right-radius:60px;"></div>
+            <div style="position:absolute;top:600px;left:160px;right:0;height:190px;border-left:3px solid #F5C518;border-bottom:3px solid #F5C518;border-bottom-left-radius:60px;"></div>
+            <div style="position:absolute;top:430px;left:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;top:620px;right:120px;font-family:'Poppins',sans-serif;font-weight:700;font-size:150px;line-height:1;color:#F5C518;">&rdquo;</div>
+            <div style="position:absolute;left:120px;bottom:96px;width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#1B6FA8,#2896D2);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:52px;color:#F5C518;">C</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">Light · blank base (logo lockup)</div>
+    </div>
+
+  </section>
+
+  <section data-screen-label="Rules" style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Keep the bracket fixed</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">The two rules and both quote marks never move. Only the words inside change — that repetition is what makes the card recognizable in a feed.</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Twenty words maximum</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Three lines at 62 px. If the quote runs longer, drop to 54 px before you take a fourth line.</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F2;border-radius:14px;padding:20px 22px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0D1424;margin-bottom:6px;">Lockup or mark, never both</div><div style="font-size:14px;line-height:1.6;color:#5A687E;">Full brand lockup for our own words; the mark alone when quoting someone else.</div></div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180}}"></script>
+</body>
+</html>

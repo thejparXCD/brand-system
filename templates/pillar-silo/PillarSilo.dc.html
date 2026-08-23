@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Pillar Silo Page" description="M³ pillar content silo — light header, pillar-gradient hero, offers, outcomes, cross-pillar links, insights feed. One tweak switches Message / Machines / Mission." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #F7F9FC; }
+  a { color: #2896D2; } a:hover { color: #F9A02A; }
+  .cop-grad-message { background: var(--grad-growth) !important; }
+  .cop-grad-machines { background: var(--grad-technology) !important; }
+  .cop-grad-mission { background: var(--grad-mission) !important; }
+</style>
+</helmet>
+
+<div style="font-family:'Open Sans',system-ui,sans-serif;color:#2A3447;background:#F7F9FC;">
+
+  <!-- LIGHT HEADER -->
+  <header data-screen-label="Header" style="position:sticky;top:0;z-index:50;background:rgba(247,249,252,0.88);backdrop-filter:blur(12px);border-bottom:1px solid #E2E8F2;">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="../../assets/logo-mark.png" alt="Celebration OnPoint" style="height:30px;"></img>
+        <span style="font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;color:#0D1424;letter-spacing:-0.01em;">Celebration OnPoint</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:26px;">
+        <a href="#" style="color:#5A687E;font-weight:600;font-size:14px;text-decoration:none;" style-hover="color:#0D1424;">Message</a>
+        <a href="#" style="color:#5A687E;font-weight:600;font-size:14px;text-decoration:none;" style-hover="color:#0D1424;">Machines</a>
+        <a href="#" style="color:#5A687E;font-weight:600;font-size:14px;text-decoration:none;" style-hover="color:#0D1424;">Mission</a>
+        <a href="#" style="color:#5A687E;font-weight:600;font-size:14px;text-decoration:none;" style-hover="color:#0D1424;">Partners</a>
+        <a href="#insights" style="color:#5A687E;font-weight:600;font-size:14px;text-decoration:none;" style-hover="color:#0D1424;">Insights</a>
+      </nav>
+      <a href="#cta" style="display:inline-flex;align-items:center;gap:8px;background:#F5C518;color:#0A0814;font-weight:600;font-size:14px;padding:11px 20px;border-radius:10px;text-decoration:none;" style-hover="background:#F9A02A;">Book a Reality Audit</a>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div style="max-width:1200px;margin:0 auto;padding:20px 28px 0;">
+    <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#8492A6;">
+      <a href="#" style="color:#8492A6;text-decoration:none;" style-hover="color:#2896D2;">Home</a>
+      <span>/</span>
+      <a href="#" style="color:#8492A6;text-decoration:none;" style-hover="color:#2896D2;">M³</a>
+      <span>/</span>
+      <span style="color:#0D1424;">{{ pillarLabel }}</span>
+    </div>
+  </div>
+
+  <!-- PILLAR HERO -->
+  <section data-screen-label="Pillar Hero" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:24px 28px 56px;">
+      <div class="{{ heroGradClass }}" style="position:relative;overflow:hidden;border-radius:28px;background:var(--grad-growth);border:1px solid rgba(255,255,255,0.1);">
+        <div class="{{ lfClass }}" aria-hidden="true"></div>
+        <div style="position:relative;padding:72px 64px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr);gap:48px;align-items:center;">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(10,8,20,0.28);border:1px solid rgba(255,255,255,0.24);margin-bottom:22px;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">{{ pillarKicker }}</span>
+            </div>
+            <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:52px;line-height:1.06;letter-spacing:-0.025em;color:#fff;margin:0 0 18px;">{{ pillarTitle }}</h1>
+            <p style="font-size:18px;line-height:1.65;color:rgba(255,255,255,0.82);max-width:520px;margin:0 0 28px;">{{ pillarIntro }}</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;">
+              <a href="#cta" style="display:inline-flex;align-items:center;gap:8px;background:#F5C518;color:#0A0814;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;text-decoration:none;transition:all 200ms cubic-bezier(0.16,1,0.3,1);" style-hover="background:#F9A02A;transform:translateY(-2px);">Book a Reality Audit</a>
+              <a href="#offers" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.35);text-decoration:none;" style-hover="border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.08);">Explore this pillar</a>
+            </div>
+          </div>
+          <div style="height:320px;border-radius:18px;overflow:hidden;background:rgba(10,8,20,0.3);border:1px solid rgba(255,255,255,0.18);"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="pillar-hero-image" placeholder="pillar hero image" hint-size="100%,320px"></x-import></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES STRIP -->
+  <section data-screen-label="Outcomes" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 28px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #E2E8F2;border-radius:16px;padding:26px 28px;box-shadow:0 1px 3px rgba(8,30,66,0.08);display:grid;gap:6px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:34px;color:#0D1424;">{{ stat.value }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8492A6;">{{ stat.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="offers" data-screen-label="Offers" style="background:#fff;border-top:1px solid #E2E8F2;">
+    <div style="max-width:1200px;margin:0 auto;padding:80px 28px;">
+      <div style="margin-bottom:44px;max-width:640px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#2896D2;margin-bottom:12px;">What's inside this pillar</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:38px;letter-spacing:-0.02em;color:#0D1424;margin:0;">{{ offersHeading }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <sc-for list="{{ offers }}" as="offer" hint-placeholder-count="3">
+          <a href="#" style="display:flex;flex-direction:column;gap:14px;background:#F7F9FC;border:1px solid #E2E8F2;border-radius:16px;padding:28px;text-decoration:none;color:inherit;transition:box-shadow 200ms ease, transform 200ms ease;" style-hover="box-shadow:0 12px 32px rgba(13,20,36,0.10);transform:translateY(-2px);">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7C8AA1;">{{ offer.num }}</div>
+            <div style="height:3px;width:36px;border-radius:2px;background:linear-gradient(120deg,#F5C518,#F9A02A);"></div>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;color:#0D1424;margin:0;">{{ offer.title }}</h3>
+            <p style="font-size:14px;line-height:1.6;color:#5A687E;margin:0;flex:1;">{{ offer.blurb }}</p>
+            <span style="font-weight:600;font-size:14px;color:#2896D2;">Learn more →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT CONNECTS (cross-pillar) -->
+  <section data-screen-label="Cross Pillars" style="position:relative;overflow:hidden;background:#0A0814;">
+    <div class="cop-lightfield cop-lf--aurora" aria-hidden="true"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:80px 28px;">
+      <div style="text-align:center;margin-bottom:44px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#59C4E5;margin-bottom:14px;">M³ · One system</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:36px;letter-spacing:-0.02em;color:#fff;margin:0 auto;max-width:640px;">No pillar stands alone.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:880px;margin:0 auto;">
+        <sc-for list="{{ siblings }}" as="sib" hint-placeholder-count="2">
+          <a href="#" class="{{ sib.gradClass }}" style="position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;border-radius:16px;padding:26px;color:#fff;border:1px solid rgba(255,255,255,0.10);background:var(--grad-technology);text-decoration:none;transition:transform 200ms ease;" style-hover="transform:translateY(-2px);">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);">{{ sib.kicker }}</div>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0;">{{ sib.title }}</h3>
+            <p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;">{{ sib.blurb }}</p>
+            <span style="font-weight:600;font-size:14px;color:#F5C518;">Visit pillar →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS FEED -->
+  <section id="insights" data-screen-label="Insights" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:80px 28px;">
+      <div style="display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#2896D2;margin-bottom:12px;">From the blog</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em;color:#0D1424;margin:0;">Latest {{ pillarLabel }} insights</h2>
+        </div>
+        <a href="#" style="font-weight:600;font-size:15px;color:#2896D2;text-decoration:none;">View all posts →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <sc-for list="{{ posts }}" as="post" hint-placeholder-count="3">
+          <a href="#" style="display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #E2E8F2;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(13,20,36,0.06);transition:box-shadow 200ms ease, transform 200ms ease;" style-hover="box-shadow:0 12px 32px rgba(13,20,36,0.12);transform:translateY(-2px);">
+            <div style="height:170px;background:#0D1424;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ post.slotId }}" placeholder="post image" hint-size="100%,170px"></x-import></div>
+            <div style="padding:22px;display:flex;flex-direction:column;gap:10px;flex:1;">
+              <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;line-height:1.3;color:#0D1424;margin:0;">{{ post.title }}</h3>
+              <p style="font-size:14px;line-height:1.55;color:#5A687E;margin:0;flex:1;">{{ post.excerpt }}</p>
+              <div style="font-size:13px;color:#8492A6;">{{ post.meta }}</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" data-screen-label="CTA" style="background:#F7F9FC;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 28px 88px;">
+      <div style="position:relative;overflow:hidden;border-radius:32px;background:#0A0814;border:1px solid rgba(255,255,255,0.08);padding:56px;">
+        <div class="cop-lightfield cop-lf--horizon" aria-hidden="true"></div>
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+          <div style="max-width:560px;">
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;color:#fff;margin:0 0 12px;">See what this pillar is hiding in your organization.</h2>
+            <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,0.75);margin:0;">A Reality Audit surfaces the gaps and the advantage — in 14 days, not 14 weeks.</p>
+          </div>
+          <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#F5C518;color:#0A0814;font-weight:600;font-size:16px;padding:16px 28px;border-radius:10px;text-decoration:none;transition:all 200ms cubic-bezier(0.16,1,0.3,1);" style-hover="background:#F9A02A;transform:translateY(-2px);">Book a Reality Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-screen-label="Footer" style="position:relative;overflow:hidden;background:#0A0814;color:#fff;">
+    <div class="cop-lightfield cop-lf--spotlight" aria-hidden="true"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:56px 28px 36px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;">
+      <div style="display:grid;gap:12px;align-content:start;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <img src="../../assets/logo-mark-white.png" alt="" style="height:26px;"></img>
+          <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#fff;">Celebration OnPoint</span>
+        </div>
+        <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin:0;max-width:340px;">We unify Message, Machines, and Mission so your organization can see more, sell more, and operate smarter.</p>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">M³</div>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Message — Growth &amp; Workforce Enablement</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Machines — Technology &amp; Infrastructure</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Mission — Mission Strategy &amp; Readiness</a>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Company</div>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Partners</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Insights</a>
+        <a href="#" style="color:rgba(255,255,255,0.72);font-size:14px;text-decoration:none;">Book a Reality Audit</a>
+      </div>
+    </div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 28px 28px;">
+      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;font-size:13px;color:rgba(255,255,255,0.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <span>© 2026 Celebration Holdings dba Celebration OnPoint. All rights reserved.</span>
+        <span style="display:flex;gap:18px;"><a href="#" style="color:rgba(255,255,255,0.45);text-decoration:none;">Privacy</a><a href="#" style="color:rgba(255,255,255,0.45);text-decoration:none;">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1440},
+  &quot;pillar&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;message&quot;, &quot;machines&quot;, &quot;mission&quot;], &quot;default&quot;: &quot;message&quot;, &quot;tsType&quot;: &quot;'message' | 'machines' | 'mission'&quot;, &quot;section&quot;: &quot;Pillar&quot;},
+  &quot;lightfield&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;pillars&quot;, &quot;horizon&quot;, &quot;aurora&quot;, &quot;spotlight&quot;], &quot;default&quot;: &quot;pillars&quot;, &quot;tsType&quot;: &quot;'pillars' | 'horizon' | 'aurora' | 'spotlight'&quot;, &quot;section&quot;: &quot;Atmosphere&quot;},
+  &quot;motion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Atmosphere&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const data = {
+      message: {
+        label: 'Message', kicker: 'M1 \u00b7 MESSAGE', gradient: 'var(--grad-growth)',
+        title: 'Growth & Workforce Enablement',
+        intro: 'Narrative, positioning, and enablement that make your people unignorable \u2014 the message your market hears and the skills your workforce needs to deliver it.',
+        offersHeading: 'From story to sales floor.',
+        offers: [
+          { num: '01', title: 'Narrative & Positioning', blurb: 'Sharpen the story your market hears \u2014 category position, messaging architecture, and proof that lands.' },
+          { num: '02', title: 'Sales Enablement', blurb: 'Playbooks, talk tracks, and training that turn positioning into pipeline.' },
+          { num: '03', title: 'Workforce Development', blurb: 'Upskilling programs that close the gap between your strategy and your people\u2019s day-to-day.' },
+        ],
+        stats: [
+          { value: '+38%', label: 'Pipeline velocity' },
+          { value: '2\u00d7', label: 'Win-rate lift' },
+          { value: '90 days', label: 'To enabled team' },
+        ],
+        siblings: ['machines', 'mission'],
+      },
+      machines: {
+        label: 'Machines', kicker: 'M2 \u00b7 MACHINES', gradient: 'var(--grad-technology)',
+        title: 'Technology & Infrastructure',
+        intro: 'The systems, automation, and AI that bring your message to life \u2014 cloud, integration, and infrastructure that work as one machine, not forty tools.',
+        offersHeading: 'From tool sprawl to one system.',
+        offers: [
+          { num: '01', title: 'Systems Integration', blurb: 'Connect CRM, marketing, and operations so data moves without manual glue.' },
+          { num: '02', title: 'AI & Automation', blurb: 'Agents and workflows that remove the repetitive work your team shouldn\u2019t be doing.' },
+          { num: '03', title: 'Cloud & Infrastructure', blurb: 'Secure, scalable foundations \u2014 built for compliance-heavy and federal environments.' },
+        ],
+        stats: [
+          { value: '3.4\u00d7', label: 'Faster decisions' },
+          { value: '\u221260%', label: 'Manual handoffs' },
+          { value: '14 days', label: 'To first audit' },
+        ],
+        siblings: ['message', 'mission'],
+      },
+      mission: {
+        label: 'Mission', kicker: 'M3 \u00b7 MISSION', gradient: 'var(--grad-mission)',
+        title: 'Mission Strategy & Readiness',
+        intro: 'The purpose behind the work \u2014 strategy, readiness, and decision frameworks that keep every initiative pointed at why you exist and who you serve.',
+        offersHeading: 'From intent to execution.',
+        offers: [
+          { num: '01', title: 'Mission Strategy', blurb: 'Clarify the objective, the constraints, and the asymmetric plays available to you.' },
+          { num: '02', title: 'Readiness Assessment', blurb: 'A hard look at whether your people, systems, and story can execute the mission today.' },
+          { num: '03', title: 'GovCon & Federal', blurb: 'Capture strategy and compliance readiness for teams pursuing federal work.' },
+        ],
+        stats: [
+          { value: '$2.1M', label: 'Surfaced revenue' },
+          { value: '100%', label: 'Audit-ready posture' },
+          { value: '1 plan', label: 'Everyone executes' },
+        ],
+        siblings: ['message', 'machines'],
+      },
+    };
+    const key = data[this.props.pillar] ? this.props.pillar : 'message';
+    const p = data[key];
+    const alive = (this.props.motion ?? true) ? ' cop-lf--alive' : '';
+    return {
+      pillarLabel: p.label,
+      pillarKicker: p.kicker,
+      pillarTitle: p.title,
+      pillarIntro: p.intro,
+      heroGradClass: 'cop-grad-' + key,
+      offersHeading: p.offersHeading,
+      offers: p.offers,
+      stats: p.stats,
+      lfClass: 'cop-lightfield cop-lf--' + (this.props.lightfield ?? 'pillars') + alive,
+      siblings: p.siblings.map(k => ({ kicker: data[k].kicker, title: data[k].title, blurb: data[k].intro.split(' \u2014 ')[0] + '.', gradClass: 'cop-grad-' + k })),
+      posts: [
+        { slotId: 'silo-post-1', title: 'The constraint you\u2019re avoiding is the strategy you\u2019re missing', excerpt: 'Why the fastest-growing teams design around what they lack.', meta: 'July 2026 \u00b7 6 min read' },
+        { slotId: 'silo-post-2', title: 'One system beats forty tools', excerpt: 'What a unified stack actually changes about how decisions get made.', meta: 'June 2026 \u00b7 5 min read' },
+        { slotId: 'silo-post-3', title: 'Readiness is a posture, not a report', excerpt: 'How to know if your organization can execute the mission today.', meta: 'June 2026 \u00b7 7 min read' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

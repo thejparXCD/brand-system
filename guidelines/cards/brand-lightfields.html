@@ -1,0 +1,44 @@
+<!-- @dsCard group="Brand" viewport="920x520" name="Light Fields" subtitle="Cool-left / warm-right light over near-black — CSS treatments + plates" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 22px; background: var(--c-ink); font-family: var(--font-body); }
+  h5 { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin: 0 0 10px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+  .tile { position: relative; overflow: hidden; height: 132px; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.08); }
+  .tile .label { position: absolute; left: 12px; bottom: 10px; z-index: 2; font-family: var(--font-display); font-weight: 600; font-size: 13px; color: #fff; }
+  .tile .tag { position: absolute; right: 12px; top: 10px; z-index: 2; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .pg { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .plate { position: relative; height: 96px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+  .plate .pl { position: absolute; left: 8px; bottom: 7px; z-index: 2; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.04em; color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+  <h5>CSS light fields — scalable, themeable</h5>
+  <div class="grid">
+    <div class="tile"><div class="cop-lightfield cop-lf--pillars"></div><span class="tag">pillars</span><span class="label">Pillars</span></div>
+    <div class="tile"><div class="cop-lightfield cop-lf--horizon"></div><span class="tag">horizon</span><span class="label">Horizon</span></div>
+    <div class="tile"><div class="cop-lightfield cop-lf--aurora"></div><span class="tag">aurora</span><span class="label">Aurora</span></div>
+    <div class="tile"><div class="cop-lightfield cop-lf--purple"></div><span class="tag">purple</span><span class="label">Purple</span></div>
+    <div class="tile"><div class="cop-lightfield cop-lf--spotlight"></div><span class="tag">spotlight</span><span class="label">Spotlight</span></div>
+    <div class="tile"><div class="cop-lightfield cop-lf--pillars cop-lf--alive"></div><span class="tag">+ alive</span><span class="label">Breathing</span></div>
+  </div>
+
+  <h5>Photographic plates — the original renders</h5>
+  <div class="pg">
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--pillars-bluegold"></div><span class="pl">pillars</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--rays-blue"></div><span class="pl">rays-blue</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--rays-bluegold"></div><span class="pl">rays-bg</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--horizon"></div><span class="pl">horizon</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--whispy"></div><span class="pl">whispy</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--pillars-goldup"></div><span class="pl">goldup</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--burst-gold"></div><span class="pl">burst</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--smoky"></div><span class="pl">smoky</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--rays-purplegold"></div><span class="pl">purple-r</span></div>
+    <div class="plate"><div class="cop-lf-plate cop-lf-plate--glow-purplegold"></div><span class="pl">purple-g</span></div>
+  </div>
+</body>
+</html>

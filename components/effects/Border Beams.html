@@ -1,0 +1,187 @@
+<!-- @dsCard group="Effects" viewport="1160x760" name="Border Beams" subtitle="Animated gold/blue traveling border for CTAs & premium cards" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Border Beams — Celebration OnPoint</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  html, body { margin: 0; }
+  body {
+    background:
+      radial-gradient(90% 70% at 18% -8%, rgba(40,150,210,0.20), transparent 62%),
+      linear-gradient(165deg, #0C1E42 0%, #070C18 74%);
+    min-height: 100vh;
+    color: var(--text-on-dark);
+    font-family: var(--font-sans, system-ui, sans-serif);
+    padding: 56px 48px 72px;
+    box-sizing: border-box;
+  }
+  .head { max-width: 1064px; margin: 0 auto 40px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-gold); font-weight: 700; margin: 0 0 10px;
+  }
+  .head h1 { font-size: 34px; line-height: 1.05; margin: 0 0 10px; font-weight: 800; letter-spacing: -0.02em; }
+  .head p { margin: 0; color: var(--n-300); font-size: 15px; max-width: 60ch; line-height: 1.5; }
+
+  .grid {
+    max-width: 1064px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    align-items: start;
+  }
+  .cell { display: flex; flex-direction: column; gap: 14px; }
+  .cell > .label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--n-400); font-weight: 600; }
+
+  /* ============================================================
+     THE BEAM PRIMITIVE
+     A rotating conic gradient sits behind the element, clipped to
+     a thin ring by a mask. One bright arc of light travels the
+     perimeter. Gold = premium/CTA, Blue = informational/featured.
+     ============================================================ */
+  .beam {
+    position: relative;
+    border-radius: 16px;
+    padding: 2px;                 /* ring thickness */
+    isolation: isolate;
+    background: rgba(255,255,255,0.06);
+  }
+  .beam::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from var(--beam-angle, 0deg),
+      transparent 0deg,
+      transparent 250deg,
+      var(--beam-c1) 320deg,
+      var(--beam-c2) 340deg,
+      transparent 360deg);
+    /* clip the fill to just the ring */
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+    animation: beam-rotate 4s linear infinite;
+    z-index: 0;
+  }
+  .beam.gold { --beam-c1: var(--c-gold-warm); --beam-c2: var(--c-gold); }
+  .beam.blue { --beam-c1: var(--c-azure);     --beam-c2: var(--c-sky);  }
+  .beam.fast::before { animation-duration: 2.4s; }
+
+  @property --beam-angle {
+    syntax: "<angle>"; inherits: false; initial-value: 0deg;
+  }
+  @keyframes beam-rotate { to { --beam-angle: 360deg; } }
+  /* Fallback for engines without @property: sweep opacity glow */
+  @supports not (background: conic-gradient(from 0deg, red, red)) {
+    .beam::before { animation: beam-pulse 2.4s ease-in-out infinite; background: none; box-shadow: var(--glow-gold); }
+    @keyframes beam-pulse { 50% { opacity: 0.4; } }
+  }
+
+  .beam-inner {
+    position: relative; z-index: 1;
+    border-radius: 14px;
+    background: linear-gradient(165deg, #10234A 0%, #0A0F22 100%);
+    height: 100%; box-sizing: border-box;
+  }
+
+  /* ---- Featured card ---- */
+  .card-inner { padding: 28px 28px 30px; }
+  .card-inner .kicker { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin: 0 0 14px; }
+  .beam.gold .kicker { color: var(--c-gold); }
+  .beam.blue .kicker { color: var(--c-sky); }
+  .card-inner h3 { font-size: 22px; margin: 0 0 10px; font-weight: 800; letter-spacing: -0.01em; }
+  .card-inner p { margin: 0 0 20px; color: var(--n-300); font-size: 14px; line-height: 1.55; }
+  .metric { display: flex; align-items: baseline; gap: 10px; }
+  .metric b { font-size: 40px; font-weight: 800; letter-spacing: -0.02em;
+    background: var(--grad-bolt); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .metric span { color: var(--n-400); font-size: 13px; }
+
+  /* ---- CTA button beam ---- */
+  .cta-wrap { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  .beam.btn { border-radius: 999px; padding: 2px; }
+  .beam.btn .beam-inner { border-radius: 999px; }
+  .beam.btn .beam-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 15px 30px; font-size: 15px; font-weight: 700; letter-spacing: 0.01em;
+    color: var(--c-ink);
+    background: var(--grad-bolt);
+    border-radius: 999px;
+  }
+  .beam.btn.ghost .beam-label { background: transparent; color: var(--text-on-dark); }
+  .beam.btn .arrow { font-size: 17px; }
+
+  /* ---- Premium chip ---- */
+  .beam.chip { border-radius: 999px; padding: 1.5px; display: inline-block; }
+  .beam.chip .beam-inner { border-radius: 999px; }
+  .beam.chip .beam-label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .beam.chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-gold); box-shadow: 0 0 8px var(--c-gold); }
+
+  .note { max-width: 1064px; margin: 34px auto 0; font-size: 13px; color: var(--n-400); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+  .note code { color: var(--c-sky); font-family: ui-monospace, monospace; font-size: 12px; }
+  @media (prefers-reduced-motion: reduce) { .beam::before { animation: none; } }
+</style>
+</head>
+<body>
+  <div class="head">
+    <p class="eyebrow">Effects · Motion</p>
+    <h1>Border Beams</h1>
+    <p>A single bright arc of light travels the perimeter — the gold momentum bolt made literal. Reserved for the one element that should pull the eye: a hero CTA, a featured plan, a premium badge.</p>
+  </div>
+
+  <div class="grid">
+    <div class="cell">
+      <div class="label">Featured card · gold</div>
+      <div class="beam gold">
+        <div class="beam-inner card-inner">
+          <p class="kicker">Growth Engine</p>
+          <h3>OnPoint Momentum Plan</h3>
+          <p>Full-funnel build with weekly measurable gains. The offer you want people to land on first.</p>
+          <div class="metric"><b>3.4×</b><span>avg. pipeline lift in 90 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="label">Featured card · blue</div>
+      <div class="beam blue">
+        <div class="beam-inner card-inner">
+          <p class="kicker">Mission Control</p>
+          <h3>Strategy Intensive</h3>
+          <p>A blue beam reads as informational and calm — use it for featured-but-not-urgent cards so gold stays the loudest thing on the page.</p>
+          <div class="metric"><b>1:1</b><span>senior strategist, six weeks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="label">CTA buttons</div>
+      <div class="cta-wrap">
+        <div class="beam btn gold fast">
+          <div class="beam-label">Book a strategy call <span class="arrow">→</span></div>
+        </div>
+        <div class="beam btn blue ghost fast">
+          <div class="beam-label">See the framework <span class="arrow">→</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="label">Premium chips</div>
+      <div class="cta-wrap">
+        <div class="beam chip gold fast">
+          <div class="beam-inner"><div class="beam-label"><span class="dot"></span>OnPoint Certified</div></div>
+        </div>
+        <div class="beam chip blue fast">
+          <div class="beam-inner"><div class="beam-label"><span class="dot" style="background:var(--c-sky);box-shadow:0 0 8px var(--c-sky)"></span>Now enrolling</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    <b style="color:var(--n-200)">Usage rules.</b> One beam per viewport — it's a spotlight, not a texture. Gold = the primary action or the plan you're steering toward; blue = featured-but-calm. Always sits on a dark navy surface (never light app surfaces). Honors <code>prefers-reduced-motion</code> — the ring holds static. Built with a masked rotating <code>conic-gradient</code> + <code>@property --beam-angle</code>; no JS.
+  </p>
+</body>
+</html>

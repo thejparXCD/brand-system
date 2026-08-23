@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><style>body{margin:0;background:#222;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}canvas{width:100%;display:block}</style></head>
+<body>
+<video id="v" src="../uploads/My Logo Sting.mp4" muted preload="auto" style="display:none"></video>
+<script>
+const v=document.getElementById('v');
+window.done=false;
+v.addEventListener('loadedmetadata',async()=>{
+  const d=v.duration;
+  document.title=d.toFixed(2)+'s '+v.videoWidth+'x'+v.videoHeight;
+  const fracs=[0.02,0.15,0.3,0.45,0.6,0.72,0.82,0.92,0.99];
+  for(const f of fracs){
+    await new Promise(r=>{v.onseeked=r;v.currentTime=d*f;});
+    await new Promise(r=>setTimeout(r,100));
+    const c=document.createElement('canvas');
+    c.width=v.videoWidth/2;c.height=v.videoHeight/2;
+    const ctx=c.getContext('2d');ctx.drawImage(v,0,0,c.width,c.height);
+    const px=ctx.getImageData(0,0,c.width,c.height).data;let mx=0,sum=0;
+    for(let i=0;i<px.length;i+=40){const l=px[i]*.3+px[i+1]*.6+px[i+2]*.1;sum+=l;if(l>mx)mx=l;}
+    ctx.filter='brightness(2.5)';ctx.drawImage(v,0,0,c.width,c.height);ctx.filter='none';
+    ctx.fillStyle='#0f0';ctx.font='20px monospace';
+    ctx.fillText('t='+(d*f).toFixed(1)+'s avg='+(sum/(px.length/40)).toFixed(1)+' max='+mx.toFixed(0),10,26);
+    document.body.appendChild(c);
+  }
+  window.done=true;
+});
+</script></body></html>
